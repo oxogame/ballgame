@@ -6,14 +6,17 @@ public class TouchManagerGuitarHero : MonoBehaviour
 {
     // 21.5 is the ideal range between the node and focus point to accept a successful tap.
     [SerializeField]
-    float idealRange = 21.5f, tolerance = 3f, extraToleranceForLong = 2f, gameSpeed = 1f, nodeCheckFrequency = 0.5f; // ideal range + tolerance range to accept the successful tap.
+    float idealRange = 21.5f, tolerance = 3f, extraToleranceForLong = 2f, gameSpeed = 1f, nodeCheckFrequency = 0.5f, powerBarStep; // ideal range + tolerance range to accept the successful tap.
     float nextNodeCheck = 0f;
 
     [SerializeField]
     List<Transform> NodeList;
 
     [SerializeField]
-    Transform FocusPoint;    
+    Transform FocusPoint;
+
+    [SerializeField]
+    Image PowerBar;
 
     Transform nodePool;
 
@@ -21,7 +24,7 @@ public class TouchManagerGuitarHero : MonoBehaviour
     float longTouchBeganError = 0f;
     float longTouchEndError = 0f;
 
-
+    
 
     void Start()
     {
@@ -130,7 +133,8 @@ public class TouchManagerGuitarHero : MonoBehaviour
         {
             if (NodeList[0].GetChild(1).position.x - tolerance < FocusPoint.position.x)
             {
-                NodeList[0].GetComponent<Image>().color = new Color(118f, 212f, 144f);
+                //NodeList[0].GetComponent<Image>().color = new Color(118f, 212f, 144f);
+                SuccessfulMove();
                 NodeList.RemoveAt(0);
             }
         }
@@ -143,8 +147,7 @@ public class TouchManagerGuitarHero : MonoBehaviour
                 if (NodeList[0].GetChild(1).position.x - tolerance < FocusPoint.position.x)
                 {
                     busyWithLong = true;
-                    longTouchBeganError = Mathf.Abs(Mathf.Abs(NodeList[0].GetChild(1).position.x) - Mathf.Abs(FocusPoint.position.x)) - tolerance;
-                    NodeList[0].GetComponent<Image>().color = new Color(118f, 212f, 144f);                   
+                    longTouchBeganError = Mathf.Abs(Mathf.Abs(NodeList[0].GetChild(1).position.x) - Mathf.Abs(FocusPoint.position.x)) - tolerance;                                     
                 }
                 
                 break;
@@ -153,6 +156,7 @@ public class TouchManagerGuitarHero : MonoBehaviour
                 if (busyWithLong) 
                 {
                     busyWithLong = false;
+                    SuccessfulMove();
                     longTouchEndError = Mathf.Abs(Mathf.Abs(NodeList[0].GetChild(0).position.x) - Mathf.Abs(FocusPoint.position.x)) - tolerance + extraToleranceForLong;
                     Debug.Log(" BEGANERROR : " + longTouchBeganError + " ::: " + " ENDERROR : " + longTouchEndError + " TOTAL ERROR  : " + (longTouchEndError + longTouchBeganError));
                     NodeList.RemoveAt(0);
@@ -160,5 +164,15 @@ public class TouchManagerGuitarHero : MonoBehaviour
                 
                 break;
         }
+    }
+
+    void SuccessfulMove() 
+    {
+        NodeList[0].GetComponent<Image>().color = new Color(118f, 212f, 144f);
+        if (PowerBar.rectTransform.anchoredPosition.x < 1) 
+        {
+            PowerBar.rectTransform.anchoredPosition = new Vector3(PowerBar.rectTransform.anchoredPosition.x + powerBarStep, 0f, 0f);
+        }
+        
     }
 }
