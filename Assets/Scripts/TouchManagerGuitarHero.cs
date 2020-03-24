@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TouchManagerGuitarHero : MonoBehaviour
 {
     // 21.5 is the ideal range between the node and focus point to accept a successful tap.
     [SerializeField]
-    float idealRange = 21.5f, tolerance = 3f, gameSpeed = 1f, nodeCheckFrequency = 0.5f; // ideal range + tolerance range to accept the successful tap.
+    float idealRange = 21.5f, tolerance = 3f, extraToleranceForLong = 2f, gameSpeed = 1f, nodeCheckFrequency = 0.5f; // ideal range + tolerance range to accept the successful tap.
     float nextNodeCheck = 0f;
 
     [SerializeField]
@@ -17,10 +17,12 @@ public class TouchManagerGuitarHero : MonoBehaviour
 
     Transform nodePool;
 
-    
+    public bool busyWithLong = false;
+    float longTouchBeganError = 0f;
+    float longTouchEndError = 0f;
 
 
-    
+
     void Start()
     {
         PrepareTheNodeList();
@@ -29,8 +31,9 @@ public class TouchManagerGuitarHero : MonoBehaviour
 
     void Update()
     {
-        moveNodePool();
+        MoveNodePool();
         NodeCheck();
+        Touched();
     }
 
     void PrepareTheNodeList()
@@ -43,15 +46,25 @@ public class TouchManagerGuitarHero : MonoBehaviour
         }
     }
 
-    void Tapped()
+    void Touched()
     {
         if (Input.touchCount > 0) 
         {
-            
+            if (NodeList.Count > 0) 
+            {
+                if (NodeList[0].tag == "Short")
+                {
+                    TapProcess(Input.GetTouch(0));
+                }
+                else if (NodeList[0].tag == "Long")
+                {
+                    LongTouchProcess(Input.GetTouch(0));
+                }
+            }      
         }
     }
 
-    void moveNodePool() 
+    void MoveNodePool() 
     {
         nodePool.Translate(-gameSpeed * Time.deltaTime, 0, 0);
     }
@@ -59,10 +72,42 @@ public class TouchManagerGuitarHero : MonoBehaviour
 
     void NodeCheck() 
     {
-        if (NodeList[0].GetChild(0).position.x - FocusPoint.position.x < -tolerance)
+        if (NodeList.Count > 0) 
         {
-            NodeList.RemoveAt(0);
+            if (NodeList[0].tag == "Short")
+            {
+                NodePassedWithoutTappedProcess();
+            }
+            else if (NodeList[0].tag == "Long") 
+            {
+
+                NodePassedWithoutTappedProcess();
+
+            }
+            
+        }       
+    }
+
+    void NodePassedWithoutTappedProcess() 
+    {
+        if (busyWithLong)
+        {
+            if (NodeList[0].GetChild(0).position.x - FocusPoint.position.x < - tolerance + extraToleranceForLong)
+            {
+                busyWithLong = false;
+                NodeList[0].GetComponent<Image>().color = new Color(0f, 0f, 0f);              
+                NodeList.RemoveAt(0);
+            }
         }
+        else 
+        {
+            if (NodeList[0].GetChild(0).position.x - FocusPoint.position.x < -tolerance)
+            {
+                NodeList[0].GetComponent<Image>().color = new Color(0f, 0f, 0f);
+                NodeList.RemoveAt(0);
+            }
+
+        }       
     }
 
     // The CPU friendly Version
@@ -79,4 +124,41 @@ public class TouchManagerGuitarHero : MonoBehaviour
             }
         }   
     }*/
+    void TapProcess(Touch touch) 
+    {
+        if (touch.phase == TouchPhase.Began)
+        {
+            if (NodeList[0].GetChild(1).position.x - tolerance < FocusPoint.position.x)
+            {
+                NodeList[0].GetComponent<Image>().color = new Color(118f, 212f, 144f);
+                NodeList.RemoveAt(0);
+            }
+        }
+    }
+    void LongTouchProcess(Touch touch) 
+    {
+        switch(touch.phase)
+        {
+            case TouchPhase.Began:               
+                if (NodeList[0].GetChild(1).position.x - tolerance < FocusPoint.position.x)
+                {
+                    busyWithLong = true;
+                    longTouchBeganError = Mathf.Abs(Mathf.Abs(NodeList[0].GetChild(1).position.x) - Mathf.Abs(FocusPoint.position.x)) - tolerance;
+                    NodeList[0].GetComponent<Image>().color = new Color(118f, 212f, 144f);                   
+                }
+                
+                break;
+
+            case TouchPhase.Ended:
+                if (busyWithLong) 
+                {
+                    busyWithLong = false;
+                    longTouchEndError = Mathf.Abs(Mathf.Abs(NodeList[0].GetChild(0).position.x) - Mathf.Abs(FocusPoint.position.x)) - tolerance + extraToleranceForLong;
+                    Debug.Log(" BEGANERROR : " + longTouchBeganError + " ::: " + " ENDERROR : " + longTouchEndError + " TOTAL ERROR  : " + (longTouchEndError + longTouchBeganError));
+                    NodeList.RemoveAt(0);
+                }
+                
+                break;
+        }
+    }
 }
