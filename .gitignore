@@ -69,7 +69,11 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
 <<<<<<< HEAD
 =======
 
 >>>>>>> 574c8f4eb180b73e7c7b076ad80917d0467daf9c
+
+#Unity GitHub
+Plugins/GitHub/
