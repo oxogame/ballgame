@@ -14,12 +14,16 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     List<Transform> NodeList;
 
     [SerializeField]
-    Transform focusPoint,finishpoint;
+    Transform focusPoint,finishpoint, player;
 
     [SerializeField]
     Image powerBar;
 
     Transform nodePool;
+
+    Animator playerAnimator;
+
+    
 
     public bool busyWithLong = false;
     float longTouchBeganError = 0f;
@@ -31,6 +35,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     {
         PrepareTheNodeList();
         print("# of Nodes : " + NodeList.Count);
+        playerAnimator = player.GetComponent<Animator>();
     }
 
     void Update()
@@ -118,20 +123,6 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         }
     }
 
-    // The CPU friendly Version
-    /*void NodeCheck() // If player can't touch the node and the node passes away the focus point, then we cancel that missed node here.
-    {
-        
-        if (nextNodeCheck < Time.timeSinceLevelLoad) 
-        {
-            nextNodeCheck = Time.timeSinceLevelLoad + nodeCheckFrequency;
-            
-            if (NodeList[0].GetChild(0).position.x - FocusPoint.position.x < - tolerance) 
-            {
-                NodeList.RemoveAt(0);
-            }
-        }   
-    }*/
     void TapProcess(Touch touch)
     {
         if (touch.phase == TouchPhase.Began)
@@ -180,4 +171,14 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         }
 
     }
+
+    void PlayAnimations() 
+    {
+        /*AnimationClip[] arrclip = GetComponent<Animator>().runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in arrclip)
+        {
+            listNameClip.Add(clip.name);
+        }*/
+    }
+
 }
