@@ -21,9 +21,6 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
 
     Transform nodePool;
 
-    Animator playerAnimator;
-
-    
 
     public bool busyWithLong = false;
     float longTouchBeganError = 0f;
@@ -35,7 +32,6 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     {
         PrepareTheNodeList();
         print("# of Nodes : " + NodeList.Count);
-        playerAnimator = player.GetComponent<Animator>();
     }
 
     void Update()
@@ -172,13 +168,6 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
 
     }
 
-    void PlayAnimations() 
-    {
-        /*AnimationClip[] arrclip = GetComponent<Animator>().runtimeAnimatorController.animationClips;
-        foreach (AnimationClip clip in arrclip)
-        {
-            listNameClip.Add(clip.name);
-        }*/
-    }
+    
 
 }
