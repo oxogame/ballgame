@@ -33,8 +33,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event playNextAnimation has a time (0.550667) outside
-      the clip's valid range (0.000000..0.550667). It will never be fired
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -51,8 +50,8 @@ ModelImporter:
       name: SagAyakSektir
       takeName: CINEMA_4D_Main
       internalID: 0
-      firstFrame: 1
-      lastFrame: 17.52
+      firstFrame: 2
+      lastFrame: 17
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -80,8 +79,8 @@ ModelImporter:
       name: SolAyakSektir
       takeName: CINEMA_4D_Main
       internalID: 0
-      firstFrame: 17.5
-      lastFrame: 34.5
+      firstFrame: 18
+      lastFrame: 33
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -109,7 +108,7 @@ ModelImporter:
       name: SolDizSektir
       takeName: CINEMA_4D_Main
       internalID: 0
-      firstFrame: 34.5
+      firstFrame: 38
       lastFrame: 61
       wrapMode: 0
       orientationOffsetY: 0
@@ -138,7 +137,7 @@ ModelImporter:
       name: SagDizSektir
       takeName: CINEMA_4D_Main
       internalID: 0
-      firstFrame: 61
+      firstFrame: 65
       lastFrame: 89
       wrapMode: 0
       orientationOffsetY: 0
