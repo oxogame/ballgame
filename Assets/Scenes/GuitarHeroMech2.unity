@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 389170630}
+  animation: {fileID: 0}
   animationList: []
   animationSerieDirections:
   - common
