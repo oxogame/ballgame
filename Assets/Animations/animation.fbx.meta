@@ -71,17 +71,19 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.1737612
+      - time: 0.25548482
         functionName: InputStart
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 99c410bd14e63874888d3c24ba032e4a,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.39408416
+      - time: 0.5233561
         functionName: InputEnd
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 99c410bd14e63874888d3c24ba032e4a,
+          type: 3}
         floatParameter: 0
         intParameter: 1
         messageOptions: 0
@@ -114,17 +116,19 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.13031004
+      - time: 0.28484198
         functionName: InputStart
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 99c410bd14e63874888d3c24ba032e4a,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.36948514
+      - time: 0.5433336
         functionName: InputEnd
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 99c410bd14e63874888d3c24ba032e4a,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

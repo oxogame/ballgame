@@ -21,4 +21,37 @@ public class PlayerAnimationEvents : MonoBehaviour
         animationManager.playNextAnimation();
     }
 
+    public void InputStart() 
+    {
+        print("PLAYING 112: ");
+        // Testing -----------------------
+        touchManager.red.SetActive(false);
+        touchManager.green.SetActive(true);
+        if (touchManager.xx.activeSelf) 
+        {
+            touchManager.xx.SetActive(false);
+        }
+        // Testing ----------------------- /
+        //touchManager.nextTouchCheck = Time.timeSinceLevelLoad + touchManager.currentLevelToleranceAmount;
+        animationManager.playNextAnimation();
+    }
+
+    public void InputEnd()
+    {
+        // Testing -----------------------
+        touchManager.red.SetActive(true);
+        touchManager.green.SetActive(false);
+        if (touchManager.tick.activeSelf) 
+        {
+            touchManager.tick.SetActive(false);
+        }
+        if (touchManager.tapOnce)
+        {
+            touchManager.xx.SetActive(true);
+        }
+        // Testing ----------------------- /
+        print("INPUT END");
+        
+        touchManager.tapOnce = true;
+    }
 }

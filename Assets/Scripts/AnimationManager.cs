@@ -12,6 +12,7 @@ public class AnimationManager : MonoBehaviour
     Animation animation;
 
     Dictionary<string, List<string>> animations;
+    Dictionary<string, int> animationIntegers;
 
     [SerializeField]
     List<string> animationList = new List<string>();
@@ -36,7 +37,7 @@ public class AnimationManager : MonoBehaviour
 
     void Update()
     {
-        CheckForNextAnimation();
+        
     }
 
     void GetAnimations()
@@ -55,6 +56,11 @@ public class AnimationManager : MonoBehaviour
         {
             {"common", new List<string>(){"SagAyakSektir", "SolAyakSektir"} },
             {"rare", new List<string>(){"SagDizSektir", "SolDizSektir"} },
+        };
+        animationIntegers = new Dictionary<string, int>()
+        {
+            {"SagAyakSektir", 1}, {"SolAyakSektir", 2},
+            {"SagDizSektir", 3}, {"SolDizSektir", 4},
         };
     }
 
@@ -88,18 +94,26 @@ public class AnimationManager : MonoBehaviour
         playNextAnimation();
     }
 
+   
     public void playNextAnimation() 
     {
-        if (animationList.Count > 0) 
+        if (animationList.Count > 0)
         {
             print("PLAYING 22: " + animationList[0]);
-            playerAnimator.Play(animationList[0]);
-            
+            playerAnimator.SetInteger("AnimFactor", animationIntegers[animationList[0]]);
+            //playerAnimator.Play(animationList[0]);
+
             animationList.RemoveAt(0);
-        }       
+        }
+        else 
+        {
+            playerAnimator.SetInteger("AnimFactor", 0);
+        }
     }
 
-    void CheckForNextAnimation() 
+    
+
+    /*void CheckForNextAnimation() // updatede cagirilacak
     {
         if (nextAnimation < Time.timeSinceLevelLoad && animationList.Count > 0) 
         {
@@ -107,6 +121,6 @@ public class AnimationManager : MonoBehaviour
             nextAnimation = Time.timeSinceLevelLoad + animationClips[animationList[0]].length;
             playNextAnimation();
         }
-    }
+    }*/
 
 }

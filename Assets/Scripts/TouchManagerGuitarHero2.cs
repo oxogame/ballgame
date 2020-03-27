@@ -26,6 +26,15 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     float longTouchBeganError = 0f;
     float longTouchEndError = 0f;
 
+    [Tooltip("increasing makes the level more difficult")]
+    public float currentLevelToleranceAmount = 0f;
+    public float nextTouchCheck = 9999999;
+    public bool tapOnce = true;
+
+    // ---------------------------
+    public GameObject green, red, tick, xx;
+
+    // ---------------------------
 
 
     void Start()
@@ -51,7 +60,22 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         }
     }
 
-    void Touched()
+    
+    void Touched() 
+    {
+   
+        if ((Input.touchCount > 0 || Input.GetMouseButtonDown(0) ) && tapOnce && green.activeSelf) 
+        {
+            print("CLICKED");
+            tapOnce = false;
+            TapProcessTest();
+            //TapProcess(Input.GetTouch(0));
+        }
+            
+        
+    }
+
+    /*void Touched() // Long and short touch mechs.
     {
         if (Input.touchCount > 0)
         {
@@ -67,7 +91,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     void MoveFocusPoint()
     {
@@ -89,9 +113,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
             }
             else if (NodeList[0].tag == "Long")
             {
-
                 NodePassedWithoutTappedProcess();
-
             }
 
         }
@@ -119,18 +141,28 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         }
     }
 
+    void TapProcessTest() 
+    {
+        print("SUCCESSFUL TOUCH");
+        // Testing Only ---------------------
+        if (green.activeSelf)
+        {
+           tick.SetActive(true);
+        }
+        // Testing Only ---------------------//
+    }
     void TapProcess(Touch touch)
     {
         if (touch.phase == TouchPhase.Began)
         {
-            if (NodeList[0].GetChild(1).position.x - tolerance < focusPoint.position.x)
-            {
-                //NodeList[0].GetComponent<Image>().color = new Color(118f, 212f, 144f);
-                SuccessfulMove();
-                NodeList.RemoveAt(0);
-            }
+            //NodeSuccessCheck();
+            print("SUCCESSFUL TOUCH 22");
+            
         }
     }
+
+
+    // Testing Only ------------- //
     void LongTouchProcess(Touch touch)
     {
         switch (touch.phase)
@@ -158,6 +190,15 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         }
     }
 
+    void NodeSuccessCheck() 
+    {
+        if (NodeList[0].GetChild(1).position.x - tolerance < focusPoint.position.x)
+        {
+            //NodeList[0].GetComponent<Image>().color = new Color(118f, 212f, 144f);
+            SuccessfulMove();
+            NodeList.RemoveAt(0);
+        }
+    }
     void SuccessfulMove()
     {
         NodeList[0].GetComponent<Image>().color = new Color(118f, 212f, 144f);
