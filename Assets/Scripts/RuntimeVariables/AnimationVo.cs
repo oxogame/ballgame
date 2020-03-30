@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,16 @@ namespace Assets.Scripts
         public float KickFrame;
 
         public Vector3 KickPosition;
+
+        [Title("Temporary Datas")]
+        public Transform RefBall;
+        [Button]
+        public void GetBallPosition()
+        {
+            KickPosition = RefBall.position;
+        }
     }
+
+    
 }
 

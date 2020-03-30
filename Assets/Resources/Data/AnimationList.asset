@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: AnimationList
   m_EditorClassIdentifier: 
   list:
-  - Name: 
+  - Name: SagAyakSektir
+    Duration: 0.76
+    KickFrame: 0
+    KickPosition: {x: 0.802, y: 0.313, z: -1.407}
+    RefBall: {fileID: 0}
+  - Name: SolAyakSektir
     Duration: 0
     KickFrame: 0
-    KickPosition: {x: 0, y: 0, z: 0}
-  - Name: 
-    Duration: 0
-    KickFrame: 0
-    KickPosition: {x: 0, y: 0, z: 0}
+    KickPosition: {x: 0.802, y: 0.313, z: -1.407}
+    RefBall: {fileID: 0}
