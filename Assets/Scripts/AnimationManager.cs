@@ -12,10 +12,10 @@ public class AnimationManager : MonoBehaviour
     Animation animation;
 
     Dictionary<string, List<string>> animations;
-    Dictionary<string, int> animationIntegers;
+    public Dictionary<string, int> animationIntegers;
 
-    [SerializeField]
-    List<string> animationList = new List<string>();
+    
+    public List<string> animationList = new List<string>();
 
     [SerializeField]
     [Tooltip("common , rare")]

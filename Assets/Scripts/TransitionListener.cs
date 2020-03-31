@@ -1,66 +1,115 @@
 ﻿using Sirenix.OdinInspector;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TransitionListener : MonoBehaviour
 {
     private int currAnimId;
 
-    private int nextAnimId;
+    private int prevAnimId;
 
     public RV_AnimDataList Data;
+
+    public AnimationManager animationManager;
+    Animator animator;
+
+    public bool testing;
+    float durationOfTransition = 0f;
+
+    [SerializeField]
+    RV_AnimDataList animDataList;
+
+    private void Start()
+    {
+        testing = true;
+        animator = this.GetComponent<Animator>();
+        animationManager = GameObject.Find("AnimationManager").GetComponent<AnimationManager>();
+    }
 
     // Animasyon Eventlerinden tetikleniyor.
     public void CheckEvent(int status)
     {
-        currAnimId = status;
-        nextAnimId = this.GetComponent<Animator>().GetInteger("AnimId");
+        
+        currAnimId = this.GetComponent<Animator>().GetInteger("AnimId");
 
         //Debug.Log(Data.tranlist[0].TransitionTime);
-        Debug.Log("Checking Event----------- ");
-        Debug.Log("Animation " + currAnimId + " --> " + nextAnimId);
+        //Debug.Log("Checking Event----------- ");
+        //Debug.Log("Animation " + currAnimId + " --> " + nextAnimId);       
+        print("AAAANIM : " + prevAnimId + "_" + currAnimId);
+        if (testing)
+        {
+            print(Time.time - durationOfTransition);
+            if (animDataList.tranList.ContainsKey(prevAnimId + "_"+ currAnimId)) 
+            {
+                print("KAydediliyor : " + prevAnimId + "_" + currAnimId + " : " + (Time.time - durationOfTransition));
+                animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime = Time.time - durationOfTransition;
+            }
+            
+            this.GetComponent<Animator>().speed = 0;
+        }
+        else 
+        {
+            Play(animator.GetInteger("AnimId"));                      
+        }
+        
+    }
 
-        this.GetComponent<Animator>().speed = 0;
+    public void Play(int AnimId)
+    {
+        animator.speed = 1;
+        if (testing)
+        {
+            durationOfTransition = Time.time;
+            prevAnimId = animator.GetInteger("AnimId");
+            animator.SetInteger("AnimId", AnimId);
+            currAnimId = animator.GetInteger("AnimId");
+            Debug.Log("Animation " + prevAnimId + " --> " + currAnimId);
+        }
+        else
+        {
+            playAuto();
+        }
     }
 
     [Button(ButtonSizes.Gigantic)]
-    public void Play()
+    public void PlayAnim() 
     {
-        this.GetComponent<Animator>().speed = 1;
-    }
+        Play(animator.GetInteger("AnimId"));
+    }   
 
     [Button(ButtonSizes.Gigantic)]
     public void Play1()
-    {
-        this.GetComponent<Animator>().SetInteger("AnimId", 1);
-        this.GetComponent<Animator>().speed = 1;
-        Debug.Log("Animation " + currAnimId + " --> " + this.GetComponent<Animator>().GetInteger("AnimId"));
+    {       
+        Play(1);
     }
 
     [Button(ButtonSizes.Gigantic)]
     public void Play2()
     {
-        this.GetComponent<Animator>().SetInteger("AnimId", 2);
-        this.GetComponent<Animator>().speed = 1;
-        Debug.Log("Animation " + currAnimId + " --> " + this.GetComponent<Animator>().GetInteger("AnimId"));
+        Play(2);
     }
 
     [Button(ButtonSizes.Gigantic)]
     public void Play3()
     {
-        this.GetComponent<Animator>().SetInteger("AnimId", 3);
-        this.GetComponent<Animator>().speed = 1;
-        Debug.Log("Animation " + currAnimId + " --> " + this.GetComponent<Animator>().GetInteger("AnimId"));
+        Play(3);
     }
 
     [Button(ButtonSizes.Gigantic)]
     public void Play4()
     {
-        this.GetComponent<Animator>().SetInteger("AnimId", 4);
-        this.GetComponent<Animator>().speed = 1;
-        Debug.Log("Animation " + currAnimId + " --> " + this.GetComponent<Animator>().GetInteger("AnimId"));
+        Play(4);
     }
 
+    void playAuto() 
+    {
+        if (!testing) 
+        {           
+            if (animationManager.animationList.Count > 0)
+            {
+                animator.SetInteger("AnimId", animationManager.animationIntegers[animationManager.animationList[0]]);
+                animationManager.animationList.RemoveAt(0);
+            }
+        }       
+    }
 
 }
