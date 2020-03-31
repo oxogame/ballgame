@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using DG.Tweening;
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,6 +24,11 @@ namespace Assets.Scripts
         public void GetBallPosition()
         {
             KickPosition = RefBall.position;
+            float flyTime = 2.2f;
+            RefBall.DOMove(KickPosition + Vector3.up * 2, flyTime * .5f).SetEase(Ease.InOutElastic);
+                //.OnComplete(()=>
+                //RefBall.DOMove(KickPosition, flyTime * .5f).SetEase(Ease.InFlash)
+            //);
         }
     }
 
