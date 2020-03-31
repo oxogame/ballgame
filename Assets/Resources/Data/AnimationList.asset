@@ -12,14 +12,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eabd35e5578b4b448ae6633bd0e6a56, type: 3}
   m_Name: AnimationList
   m_EditorClassIdentifier: 
-  list:
-  - Name: SagAyakSektir
-    Duration: 15
-    KickFrame: 9
-    KickPosition: {x: 0.802, y: 2.3, z: -1.407}
-    RefBall: {fileID: 0}
-  - Name: SolAyakSektir
-    Duration: 15
-    KickFrame: 7
-    KickPosition: {x: 0.802, y: 0.313, z: -1.407}
-    RefBall: {fileID: 0}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: tranlist
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Assets.Scripts.TransitionVo,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 1111
+    - Name: $v
+      Entry: 7
+      Data: 2|Assets.Scripts.TransitionVo, Assembly-CSharp
+    - Name: Name
+      Entry: 6
+      Data: 
+    - Name: TransitionTime
+      Entry: 4
+      Data: 0
+    - Name: BallPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RefBall
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 121212
+    - Name: $v
+      Entry: 7
+      Data: 3|Assets.Scripts.TransitionVo, Assembly-CSharp
+    - Name: Name
+      Entry: 1
+      Data: 121212
+    - Name: TransitionTime
+      Entry: 4
+      Data: 0.76
+    - Name: BallPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RefBall
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  animlist: []
