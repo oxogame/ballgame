@@ -12,14 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eabd35e5578b4b448ae6633bd0e6a56, type: 3}
   m_Name: AnimationList
   m_EditorClassIdentifier: 
-  list:
-  - Name: SagAyakSektir
-    Duration: 15
-    KickFrame: 9
-    KickPosition: {x: 0.802, y: 2.3, z: -1.407}
-    RefBall: {fileID: 0}
-  - Name: SolAyakSektir
-    Duration: 15
-    KickFrame: 7
-    KickPosition: {x: 0.802, y: 0.313, z: -1.407}
+  animlist: []
+  tranlist:
+  - Name: 1_1
+    TransitionTime: 0
+    BallPosition: {x: -0.66, y: 0.21, z: -1.17}
     RefBall: {fileID: 0}
