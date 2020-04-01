@@ -159,7 +159,7 @@ public class TransitionListener : MonoBehaviour
     {
         float midX = targetPos.x - ((targetPos.x - currentPos.x) / 2);
         float midZ = targetPos.z - ((targetPos.z - currentPos.z) / 2);
-        float midY = currentPos.y +(duration / 0.1f) * ballHeightUnity;
+        float midY = Mathf.Max(currentPos.y, targetPos.y) +(duration / 0.1f) * ballHeightUnity;
         return new Vector3(midX, midY, midZ);
     }
     Vector2 travelDurationPortions(float currentY, float targetY, float midY, float duration) 
