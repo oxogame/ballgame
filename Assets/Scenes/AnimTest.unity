@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 876c7c1c76273ad4fb5557fdcea367ca, type: 2}
-  animationManager: {fileID: 0}
+  animationManager: {fileID: 527326128}
   testing: 0
   animDataList: {fileID: 11400000, guid: 876c7c1c76273ad4fb5557fdcea367ca, type: 2}
   ball: {fileID: 622614397}
