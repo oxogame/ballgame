@@ -6,7 +6,7 @@ Preset:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AnimDataList_Backup
+  m_Name: backup_1
   m_TargetType:
     m_NativeTypeID: 114
     m_ManagedTypePPtr: {fileID: 11500000, guid: 7eabd35e5578b4b448ae6633bd0e6a56,
@@ -153,7 +153,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[7].Data
-    value: 0.831281662
+    value: 0.8333168
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[8].Name
@@ -177,7 +177,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[9].Data
-    value: 0.401
+    value: -1.852
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[10].Name
@@ -189,7 +189,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[10].Data
-    value: -1.392
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[11].Name
@@ -201,7 +201,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[11].Data
-    value: -1.852
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[12].Name
@@ -297,7 +297,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[19].Data
-    value: 0.692173
+    value: 0.7026634
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[20].Name
@@ -321,7 +321,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[21].Data
-    value: -0.65
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[22].Name
@@ -333,7 +333,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[22].Data
-    value: -1.28
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[23].Name
@@ -345,7 +345,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[23].Data
-    value: -1.852
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[24].Name
@@ -441,7 +441,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[31].Data
-    value: 0.8603821
+    value: 0.8485031
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[32].Name
@@ -465,7 +465,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[33].Data
-    value: -0.244
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[34].Name
@@ -477,7 +477,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[34].Data
-    value: 0.36
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[35].Name
@@ -489,7 +489,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[35].Data
-    value: -0.929
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[36].Name
@@ -585,7 +585,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[43].Data
-    value: 0.8872528
+    value: 0.8572769
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[44].Name
@@ -609,7 +609,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[45].Data
-    value: 0.263
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[46].Name
@@ -621,7 +621,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[46].Data
-    value: 0.446
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[47].Name
@@ -633,7 +633,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[47].Data
-    value: -0.929
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[48].Name
@@ -729,7 +729,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[55].Data
-    value: 0.6649685
+    value: 0.8254013
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[56].Name
@@ -753,7 +753,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[57].Data
-    value: -0.65
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[58].Name
@@ -765,7 +765,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[58].Data
-    value: -1.28
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[59].Name
@@ -777,7 +777,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[59].Data
-    value: -1.852
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[60].Name
@@ -873,7 +873,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[67].Data
-    value: 0.6463003
+    value: 0.637550354
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[68].Name
@@ -897,7 +897,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[69].Data
-    value: 0.401
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[70].Name
@@ -909,7 +909,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[70].Data
-    value: -1.392
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[71].Name
@@ -921,7 +921,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[71].Data
-    value: -1.852
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[72].Name
@@ -1017,7 +1017,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[79].Data
-    value: 0.8407879
+    value: 0.8321037
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[80].Name
@@ -1041,7 +1041,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[81].Data
-    value: -0.244
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[82].Name
@@ -1053,7 +1053,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[82].Data
-    value: 0.36
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[83].Name
@@ -1065,7 +1065,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[83].Data
-    value: -0.929
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[84].Name
@@ -1161,7 +1161,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[91].Data
-    value: 0.8530655
+    value: 0.843894958
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[92].Name
@@ -1185,7 +1185,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[93].Data
-    value: 0.263
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[94].Name
@@ -1197,7 +1197,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[94].Data
-    value: 0.446
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[95].Name
@@ -1209,7 +1209,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[95].Data
-    value: -0.929
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[96].Name
@@ -1305,7 +1305,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[103].Data
-    value: 0
+    value: 0.6707916
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[104].Name
@@ -1449,7 +1449,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[115].Data
-    value: 0.6633091
+    value: 0.6871414
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[116].Name
@@ -1593,7 +1593,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[127].Data
-    value: 0.809036255
+    value: 1.05688477
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[128].Name
@@ -1737,7 +1737,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[139].Data
-    value: 0.858688354
+    value: 0.8574753
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[140].Name
@@ -1881,7 +1881,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[151].Data
-    value: 0.6384735
+    value: 1.02990723
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[152].Name
@@ -2025,7 +2025,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[163].Data
-    value: 0.153450012
+    value: 0.6670456
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[164].Name
@@ -2169,7 +2169,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[175].Data
-    value: 0.841842651
+    value: 0.827652
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[176].Name
@@ -2313,7 +2313,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[187].Data
-    value: 0
+    value: 1.05256653
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[188].Name
@@ -2543,7 +2543,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[206].Data
-    value: 0.401
+    value: 0.57
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[207].Name
@@ -2555,7 +2555,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[207].Data
-    value: -1.392
+    value: -1.337
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[208].Name
@@ -2675,7 +2675,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[217].Data
-    value: -0.65
+    value: -0.478
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[218].Name
@@ -2687,7 +2687,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[218].Data
-    value: -1.28
+    value: -1.391
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[219].Name
@@ -2699,7 +2699,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[219].Data
-    value: -1.852
+    value: -1.832
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[220].Name
@@ -2807,7 +2807,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[228].Data
-    value: -0.244
+    value: -0.3
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[229].Name
@@ -2819,7 +2819,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[229].Data
-    value: 0.36
+    value: 0.423
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[230].Name
@@ -2831,7 +2831,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[230].Data
-    value: -0.929
+    value: -0.823
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[231].Name
@@ -2939,7 +2939,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[239].Data
-    value: 0.263
+    value: 0.185
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[240].Name
@@ -2951,7 +2951,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[240].Data
-    value: 0.446
+    value: 0.423
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[241].Name
@@ -2963,7 +2963,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[241].Data
-    value: -0.929
+    value: -0.823
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: serializationData.SerializationNodes.Array.data[242].Name

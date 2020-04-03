@@ -29,7 +29,7 @@ public class TransitionListener : MonoBehaviour
 
     private void Start()
     {
-        testing = true;
+        //testing = true;
         animator = this.GetComponent<Animator>();
         animationManager = GameObject.Find("AnimationManager").GetComponent<AnimationManager>();
     }
@@ -128,16 +128,15 @@ public class TransitionListener : MonoBehaviour
     {
         midPoint = midPointFinder(currentPos, targetPos, duration);
         Vector2 travelDurations = travelDurationPortions(currentPos.y, targetPos.y, midPoint.y, duration);
-        //DOTween.Kill(ball);
-        //print(" Transition : " + prevAnimId + "_" + currAnimId + " Ball Target Pos : " + targetPos);
-        Instantiate(testCube, midPoint, Quaternion.identity);
-        Instantiate(testCube, targetPos, Quaternion.identity);
 
-        //ball.DOMove(targetPos, duration).SetEase(Ease.InOutBack);
-        print("TARGET POOS : " + targetPos);
+        if (testCube != null)
+        {
+            Instantiate(testCube, midPoint, Quaternion.identity);
+            Instantiate(testCube, targetPos, Quaternion.identity);
+        }
+
+        //print("TARGET POOS : " + targetPos);
         GoUp(travelDurations, targetPos);
-
-        //ball.DOMoveY(midPoint.y, travelDurations.y).SetEase(Ease.OutQuad).SetDelay(travelDurations.x);
 
     }
 
@@ -149,7 +148,7 @@ public class TransitionListener : MonoBehaviour
     }
     private void GoDown(Vector2 travelDurations, Vector3 targetPos)
     {
-        print("GO DOWN : " + travelDurations.y);
+        //print("GO DOWN : " + travelDurations.y);
         ball.DOMoveY(targetPos.y, travelDurations.y).SetEase(Ease.InQuad);
         ball.DOMoveX(targetPos.x, travelDurations.y).SetEase(Ease.Linear);
         ball.DOMoveZ(targetPos.z, travelDurations.y).SetEase(Ease.Linear);
@@ -166,7 +165,7 @@ public class TransitionListener : MonoBehaviour
     {
         float riseDuration = duration*(Mathf.Abs( midY - currentY ) / (Mathf.Abs(midY - currentY) + Mathf.Abs(midY - targetY)));
         float dropDuration = duration - riseDuration;
-        print(" PORTIONS TOTAL : " + duration + " : riseDuration : " + riseDuration + " . dropDuration : " + dropDuration + " : riseDurationRatio : " + (midY - currentY / (midY - currentY + midY - targetY)));
+        //print(" PORTIONS TOTAL : " + duration + " : riseDuration : " + riseDuration + " . dropDuration : " + dropDuration + " : riseDurationRatio : " + (midY - currentY / (midY - currentY + midY - targetY)));
         return new Vector2(riseDuration, dropDuration);
     }
 }
