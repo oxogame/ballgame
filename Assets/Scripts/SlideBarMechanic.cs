@@ -35,8 +35,4 @@ public class SlideBarMechanic : MonoBehaviour
         print("CURRENT VALUE : " + currentValue);
     }
 
-    void denemeBirKiUC() 
-    {
-        print("deniyom");
-    }
 }
