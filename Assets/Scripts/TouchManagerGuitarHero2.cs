@@ -167,7 +167,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
 
     public void FailProcess()     
     {
-        print(" FAILEDDDD");
+        print(" FAILEDDDD" + transitionListener.animator.GetInteger("AnimId"));
         transitionListener.animator.SetInteger("AnimId", 10);
     }
 
@@ -175,7 +175,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
 
     void TapProcess(Touch touch)
     {
-        if (touch.phase == TouchPhase.Began)
+        if (touch.phase == TouchPhase.Began && transitionListener.animCounter > 1)
         {
             //NodeSuccessCheck();
             print("SUCCESSFUL TOUCH 22");
@@ -183,8 +183,6 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         }
     }
 
-
-    // Testing Only ------------- //
     void LongTouchProcess(Touch touch)
     {
         switch (touch.phase)

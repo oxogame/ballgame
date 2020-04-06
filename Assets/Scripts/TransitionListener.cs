@@ -7,9 +7,10 @@ using System.Collections;
 
 public class TransitionListener : MonoBehaviour
 {
-    private int currAnimId;
 
-    private int prevAnimId;
+    [SerializeField]
+    private int prevAnimId, currAnimId;
+    public int animCounter = 0;
     private int currAnimInteger;
     private int prevAnimInteger;
 
@@ -42,8 +43,6 @@ public class TransitionListener : MonoBehaviour
     [SerializeField]
     public Text startCounter;
 
-    int animCounter = 0;
-
     private void Start()
     {
         
@@ -59,6 +58,11 @@ public class TransitionListener : MonoBehaviour
     {
         if (Time.time > listenStart)
         {
+            if (animCounter > 2 && !touched && !rightTimeToTap)
+            {
+                //touched = true;
+                touchManager.FailProcess();
+            }
             if (rightTimeAvailableToChange)
             {
                 rightTimeAvailableToChange = false;
@@ -75,12 +79,7 @@ public class TransitionListener : MonoBehaviour
             }
         }
         else 
-        {
-            if (!touched && animator.GetInteger("AnimId") != 0 && animCounter > 0)             
-            {
-                //touched = true;
-                touchManager.FailProcess();
-            }
+        {           
             if (!rightTimeAvailableToChange)
             {
                 rightTimeAvailableToChange = true;
@@ -181,6 +180,7 @@ public class TransitionListener : MonoBehaviour
                 //print(" transition : " + prevAnimId + "_" + currAnimId + " : Duration : " + animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
                 if (prevAnimId != 0) 
                 {
+                    print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
                     moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, 
                         animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 
                         animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * animator.GetFloat("TimeFactor"));
