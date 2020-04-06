@@ -30,7 +30,10 @@ public class TransitionListener : MonoBehaviour
     Transform ball, testCube;
     Vector3 midPoint;
     [SerializeField]
-    float ballHeightUnity = 1f, toleranceRange = 0.25f;
+    float ballHeightUnity = 1f, toleranceRange = 0.25f, highLightToggleFreq= 0.1f;
+    bool ballHighlightOn = false;
+    float nextHighlightToggle = 0f;
+    GameObject ballHeighlight;
 
     float listenStop;
     float listenStart;
@@ -50,6 +53,7 @@ public class TransitionListener : MonoBehaviour
         animator = this.GetComponent<Animator>();
         animationManager = GameObject.Find("AnimationManager").GetComponent<AnimationManager>();
         StartCoroutine(Counter());
+        ballHeighlight = ball.GetChild(0).gameObject;
 
 
     }
@@ -57,7 +61,7 @@ public class TransitionListener : MonoBehaviour
     private void Update()
     {
         if (Time.time > listenStart)
-        {
+        {           
             if (animCounter > 2 && !touched && !rightTimeToTap)
             {
                 //touched = true;
@@ -69,6 +73,11 @@ public class TransitionListener : MonoBehaviour
                 rightTimeToTap = true;
                 touched = false;
             }
+            if (!ballHeighlight.activeSelf) 
+            {
+                Highlighter(true);
+            }
+
         }
         else if (Time.time < listenStop)
         {
@@ -77,6 +86,10 @@ public class TransitionListener : MonoBehaviour
                 rightTimeAvailableToChange = false;
                 rightTimeToTap = true;
             }
+            if (!ballHeighlight.activeSelf)
+            {
+                Highlighter(true);
+            }
         }
         else 
         {           
@@ -84,6 +97,10 @@ public class TransitionListener : MonoBehaviour
             {
                 rightTimeAvailableToChange = true;
                 rightTimeToTap = false;
+            }
+            if (ballHeighlight.activeSelf)
+            {
+                Highlighter(false);
             }
         }
     }
@@ -262,6 +279,17 @@ public class TransitionListener : MonoBehaviour
         print("BUTTON ACTIVE");
         animationManager.GenerateAnimationSerieDirected();
         StartCoroutine(Counter());
+    }
+
+    void Highlighter(bool on) 
+    {
+        ballHeighlight.SetActive(on);
+        /*if (nextHighlightToggle < Time.timeSinceLevelLoad) 
+        {
+            nextHighlightToggle = Time.timeSinceLevelLoad + highLightToggleFreq;
+            ballHeighlight.SetActive(!ballHeighlight.activeSelf); 
+        }*/
+
     }
 
 }
