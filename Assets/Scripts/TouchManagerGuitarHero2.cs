@@ -21,6 +21,9 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
 
     Transform nodePool;
 
+    [SerializeField]
+    TransitionListener transitionListener;
+
 
     public bool busyWithLong = false;
     float longTouchBeganError = 0f;
@@ -45,8 +48,8 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
 
     void Update()
     {
-        MoveFocusPoint();
-        NodeCheck();
+        // MoveFocusPoint();
+        //NodeCheck();
         Touched();
     }
 
@@ -61,13 +64,13 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     }
 
     
-    void Touched() 
+    public void Touched() 
     {
    
-        if ((Input.touchCount > 0 || Input.GetMouseButtonDown(0) ) && tapOnce && green.activeSelf) 
+        if ((Input.touchCount > 0 || Input.GetMouseButtonDown(0) ) ) 
         {
             print("CLICKED");
-            tapOnce = false;
+            
             TapProcessTest();
             //TapProcess(Input.GetTouch(0));
         }
@@ -143,14 +146,33 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
 
     void TapProcessTest() 
     {
-        print("SUCCESSFUL TOUCH");
-        // Testing Only ---------------------
-        if (green.activeSelf)
+
+        if (transitionListener.rightTimeToTap)
         {
-           tick.SetActive(true);
+            // successful
+            SuccessProcess();
         }
-        // Testing Only ---------------------//
+        else 
+        {
+            // unsuccessful
+            FailProcess();
+        }      
     }
+
+    void SuccessProcess() 
+    {
+        print(" SUCCCFEEEEESSSSS");
+        transitionListener.touched = true;
+    }
+
+    public void FailProcess()     
+    {
+        print(" FAILEDDDD");
+        transitionListener.animator.SetInteger("AnimId", 10);
+    }
+
+    
+
     void TapProcess(Touch touch)
     {
         if (touch.phase == TouchPhase.Began)
