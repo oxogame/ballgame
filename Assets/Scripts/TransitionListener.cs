@@ -209,10 +209,10 @@ public class TransitionListener : MonoBehaviour
                         animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 
                         animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * animator.GetFloat("TimeFactor"));
                 }
-                else
+                /*else
                 {
-                    ball.DOMove(animDataList.moveFigureList[prevAnimInteger.ToString()+currAnimInteger.ToString()].BallPosition, 0.3f).SetEase(Ease.Linear);
-                }
+                    ball.DOMove(animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 0.3f).SetEase(Ease.InQuad);
+                }*/
             }
         }       
     }
