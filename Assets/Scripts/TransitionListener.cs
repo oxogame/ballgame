@@ -1,6 +1,9 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
+using System.Collections;
+
 
 public class TransitionListener : MonoBehaviour
 {
@@ -13,7 +16,8 @@ public class TransitionListener : MonoBehaviour
     public RV_AnimDataList Data;
 
     public AnimationManager animationManager;
-    Animator animator;
+    public TouchManagerGuitarHero2 touchManager;
+    public Animator animator;
 
     public bool testing;
     float durationOfTransition = 0f;
@@ -25,26 +29,78 @@ public class TransitionListener : MonoBehaviour
     Transform ball, testCube;
     Vector3 midPoint;
     [SerializeField]
-    float ballHeightUnity = 1f;
+    float ballHeightUnity = 1f, toleranceRange = 0.25f;
+
+    float listenStop;
+    float listenStart;
+
+    public bool rightTimeToTap = false;
+    bool rightTimeAvailableToChange = true;
+
+    public bool touched = false;
+
+    [SerializeField]
+    public Text startCounter;
+
+    int animCounter = 0;
 
     private void Start()
     {
-        testing = true;
+        
+        testing = false;
         animator = this.GetComponent<Animator>();
         animationManager = GameObject.Find("AnimationManager").GetComponent<AnimationManager>();
+        StartCoroutine(Counter());
+
+
+    }
+
+    private void Update()
+    {
+        if (Time.time > listenStart)
+        {
+            if (rightTimeAvailableToChange)
+            {
+                rightTimeAvailableToChange = false;
+                rightTimeToTap = true;
+                touched = false;
+            }
+        }
+        else if (Time.time < listenStop)
+        {
+            if (rightTimeAvailableToChange)
+            {                
+                rightTimeAvailableToChange = false;
+                rightTimeToTap = true;
+            }
+        }
+        else 
+        {
+            if (!touched && animator.GetInteger("AnimId") != 0 && animCounter > 0)             
+            {
+                //touched = true;
+                touchManager.FailProcess();
+            }
+            if (!rightTimeAvailableToChange)
+            {
+                rightTimeAvailableToChange = true;
+                rightTimeToTap = false;
+            }
+        }
     }
 
     // Animasyon Eventlerinden Topun vucuda degdigi anda tetikleniyor.
     public void CheckEvent(int status)
-    {      
-        //currAnimId = this.GetComponent<Animator>().GetInteger("AnimId");   
+    {
+        //currAnimId = this.GetComponent<Animator>().GetInteger("AnimId");
+        
         if (testing)
         {
             print(Time.time - durationOfTransition);
             if (animDataList.tranList.ContainsKey(prevAnimId + "_"+ currAnimId)) 
             {
                 print("KAydediliyor : " + prevAnimId + "_" + currAnimId + " : " + (Time.time - durationOfTransition));
-                animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime = Time.time - durationOfTransition;
+                animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime = Time.time - durationOfTransition;               
             }
             
             this.GetComponent<Animator>().speed = 0;
@@ -61,10 +117,12 @@ public class TransitionListener : MonoBehaviour
         if (testing)
         {
             durationOfTransition = Time.time;
+
             prevAnimId = animator.GetInteger("AnimId");
             animator.SetInteger("AnimId", AnimId);
             currAnimId = animator.GetInteger("AnimId");
-            Debug.Log("Animation " + prevAnimId + " --> " + currAnimId);
+
+            //Debug.Log("Animation " + prevAnimId + " --> " + currAnimId);
         }
         else
         {
@@ -106,19 +164,26 @@ public class TransitionListener : MonoBehaviour
     {
         if (!testing) 
         {           
-            if (animationManager.animationList.Count > 0)
+            if (animationManager.animationList.Count > 0 && animator.GetInteger("AnimId") != 10)
             {
                 prevAnimInteger = currAnimInteger;
                 currAnimInteger = animationManager.animationIntegers[animationManager.animationList[0]];
+
                 prevAnimId = animator.GetInteger("AnimId");
                 animator.SetInteger("AnimId", currAnimInteger);
                 currAnimId = animator.GetInteger("AnimId");
+                animCounter++;
+
+                //setListenTimeForCurrentKick(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
+
                 animationManager.animationList.RemoveAt(0);
-                print(" transition : " + prevAnimId + "_" + currAnimId);
-                print(" transition : " + prevAnimId + "_" + currAnimId + " : Duration : " + animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
+
+                //print(" transition : " + prevAnimId + "_" + currAnimId + " : Duration : " + animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
                 if (prevAnimId != 0) 
                 {
-                    moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
+                    moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, 
+                        animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 
+                        animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * animator.GetFloat("TimeFactor"));
                 }
             }
         }       
@@ -128,16 +193,11 @@ public class TransitionListener : MonoBehaviour
     {
         midPoint = midPointFinder(currentPos, targetPos, duration);
         Vector2 travelDurations = travelDurationPortions(currentPos.y, targetPos.y, midPoint.y, duration);
-        //DOTween.Kill(ball);
-        //print(" Transition : " + prevAnimId + "_" + currAnimId + " Ball Target Pos : " + targetPos);
-        Instantiate(testCube, midPoint, Quaternion.identity);
-        Instantiate(testCube, targetPos, Quaternion.identity);
+        setListenTimeForCurrentKick(duration);
+        //Instantiate(testCube, midPoint, Quaternion.identity);
+        //Instantiate(testCube, targetPos, Quaternion.identity);
 
-        //ball.DOMove(targetPos, duration).SetEase(Ease.InOutBack);
-        print("TARGET POOS : " + targetPos);
         GoUp(travelDurations, targetPos);
-
-        //ball.DOMoveY(midPoint.y, travelDurations.y).SetEase(Ease.OutQuad).SetDelay(travelDurations.x);
 
     }
 
@@ -149,7 +209,7 @@ public class TransitionListener : MonoBehaviour
     }
     private void GoDown(Vector2 travelDurations, Vector3 targetPos)
     {
-        print("GO DOWN : " + travelDurations.y);
+        //print("GO DOWN : " + travelDurations.y);
         ball.DOMoveY(targetPos.y, travelDurations.y).SetEase(Ease.InQuad);
         ball.DOMoveX(targetPos.x, travelDurations.y).SetEase(Ease.Linear);
         ball.DOMoveZ(targetPos.z, travelDurations.y).SetEase(Ease.Linear);
@@ -166,7 +226,42 @@ public class TransitionListener : MonoBehaviour
     {
         float riseDuration = duration*(Mathf.Abs( midY - currentY ) / (Mathf.Abs(midY - currentY) + Mathf.Abs(midY - targetY)));
         float dropDuration = duration - riseDuration;
-        print(" PORTIONS TOTAL : " + duration + " : riseDuration : " + riseDuration + " . dropDuration : " + dropDuration + " : riseDurationRatio : " + (midY - currentY / (midY - currentY + midY - targetY)));
+        //print(" PORTIONS TOTAL : " + duration + " : riseDuration : " + riseDuration + " . dropDuration : " + dropDuration + " : riseDurationRatio : " + (midY - currentY / (midY - currentY + midY - targetY)));
         return new Vector2(riseDuration, dropDuration);
     }
+
+    void setListenTimeForCurrentKick(float duration) 
+    {
+        listenStop = Time.time + toleranceRange;
+        listenStart = Time.time + duration - toleranceRange;
+        //print(  " STOP :  " + listenStop + " :: Start :  " + listenStart);
+    }
+
+    IEnumerator Counter() 
+    {
+        animator.SetInteger("AnimId", 0);
+        touched = false;
+        animCounter = 0;
+        print(" XXXXXXXXXXXXXXXXXXXXXXX 222");
+        for (int i = 3; i > 0; i--) 
+        {
+            print(" XXXXXXXXXXXXXXXXXXXXXXX ");
+            yield return new WaitForSeconds(1f);
+            startCounter.text = i.ToString();           
+        }
+        yield return new WaitForSeconds(1f);
+        startCounter.text = "GO";
+        // Build Apk purposes
+        
+        Play(0); // input doesn't matter
+        // Build Apk purposes //
+    }
+
+    public void rePlay() 
+    {
+        print("BUTTON ACTIVE");
+        animationManager.GenerateAnimationSerieDirected();
+        StartCoroutine(Counter());
+    }
+
 }

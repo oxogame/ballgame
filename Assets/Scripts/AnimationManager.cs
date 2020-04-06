@@ -64,8 +64,10 @@ public class AnimationManager : MonoBehaviour
         };
     }
 
-    void GenerateAnimationSerieDirected() 
+    public void GenerateAnimationSerieDirected() 
     {
+        animationList = new List<string>();
+
         foreach (string rarity in animationSerieDirections) 
         {
             animationList.Add(animations[rarity][Random.Range(0, animations[rarity].Count)]);
