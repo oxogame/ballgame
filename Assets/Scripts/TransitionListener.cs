@@ -34,6 +34,7 @@ public class TransitionListener : MonoBehaviour
     bool ballHighlightOn = false;
     float nextHighlightToggle = 0f;
     GameObject ballHeighlight;
+    GameObject helper;
 
     float listenStop;
     float listenStart;
@@ -54,6 +55,7 @@ public class TransitionListener : MonoBehaviour
         animationManager = GameObject.Find("AnimationManager").GetComponent<AnimationManager>();
         StartCoroutine(Counter());
         ballHeighlight = ball.GetChild(0).gameObject;
+        helper = GameObject.Find("Helper2");
 
 
     }
@@ -73,10 +75,10 @@ public class TransitionListener : MonoBehaviour
                 rightTimeToTap = true;
                 touched = false;
             }
-            if (!ballHeighlight.activeSelf) 
+            /*if (!ballHeighlight.activeSelf) 
             {
                 Highlighter(true);
-            }
+            }*/
 
         }
         else if (Time.time < listenStop)
@@ -86,10 +88,10 @@ public class TransitionListener : MonoBehaviour
                 rightTimeAvailableToChange = false;
                 rightTimeToTap = true;
             }
-            if (!ballHeighlight.activeSelf)
+            /*if (!ballHeighlight.activeSelf)
             {
                 Highlighter(true);
-            }
+            }*/
         }
         else 
         {           
@@ -188,19 +190,28 @@ public class TransitionListener : MonoBehaviour
                 prevAnimId = animator.GetInteger("AnimId");
                 animator.SetInteger("AnimId", currAnimInteger);
                 currAnimId = animator.GetInteger("AnimId");
+                helper.transform.position = animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition;
+
                 animCounter++;
 
                 //setListenTimeForCurrentKick(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
 
-                animationManager.animationList.RemoveAt(0);
+                
+                
 
                 //print(" transition : " + prevAnimId + "_" + currAnimId + " : Duration : " + animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
                 if (prevAnimId != 0) 
                 {
-                    print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
+                    print("REMOVING : " + animationManager.animationList[0]);
+                    animationManager.animationList.RemoveAt(0);
+                    //print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
                     moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, 
                         animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 
                         animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * animator.GetFloat("TimeFactor"));
+                }
+                else
+                {
+                    ball.DOMove(animDataList.moveFigureList[prevAnimInteger.ToString()+currAnimInteger.ToString()].BallPosition, 0.3f).SetEase(Ease.Linear);
                 }
             }
         }       
@@ -259,10 +270,10 @@ public class TransitionListener : MonoBehaviour
         animator.SetInteger("AnimId", 0);
         touched = false;
         animCounter = 0;
-        print(" XXXXXXXXXXXXXXXXXXXXXXX 222");
+        //print(" XXXXXXXXXXXXXXXXXXXXXXX 222");
         for (int i = 3; i > 0; i--) 
         {
-            print(" XXXXXXXXXXXXXXXXXXXXXXX ");
+            //print(" XXXXXXXXXXXXXXXXXXXXXXX ");
             yield return new WaitForSeconds(1f);
             startCounter.text = i.ToString();           
         }

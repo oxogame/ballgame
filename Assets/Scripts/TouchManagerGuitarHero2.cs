@@ -43,7 +43,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     void Start()
     {
         PrepareTheNodeList();
-        print("# of Nodes : " + NodeList.Count);
+        //print("# of Nodes : " + NodeList.Count);
     }
 
     void Update()

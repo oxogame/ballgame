@@ -59,7 +59,7 @@ public class AnimationManager : MonoBehaviour
         };
         animationIntegers = new Dictionary<string, int>()
         {
-            {"SagAyakSektir", 1}, {"SolAyakSektir", 2},
+            {"SagAyakSektir", 2}, {"SolAyakSektir", 1},
             {"SagDizSektir", 3}, {"SolDizSektir", 4},
         };
     }
