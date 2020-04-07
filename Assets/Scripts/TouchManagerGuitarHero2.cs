@@ -168,7 +168,8 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     public void FailProcess()     
     {
         print(" FAILEDDDD" + transitionListener.animator.GetInteger("AnimId"));
-        transitionListener.animator.SetInteger("AnimId", 10);
+        //transitionListener.animator.SetInteger("AnimId", 10);
+        transitionListener.failed = true;
     }
 
     

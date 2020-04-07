@@ -43,6 +43,7 @@ public class TransitionListener : MonoBehaviour
     bool rightTimeAvailableToChange = true;
 
     public bool touched = false;
+    public bool failed = false;
 
     [SerializeField]
     public Text startCounter;
@@ -64,11 +65,7 @@ public class TransitionListener : MonoBehaviour
     {
         if (Time.time > listenStart)
         {           
-            if (animCounter > 2 && !touched && !rightTimeToTap)
-            {
-                //touched = true;
-                touchManager.FailProcess();
-            }
+            
             if (rightTimeAvailableToChange)
             {
                 rightTimeAvailableToChange = false;
@@ -94,7 +91,12 @@ public class TransitionListener : MonoBehaviour
             }*/
         }
         else 
-        {           
+        {
+            if (animCounter > 2 && !touched && rightTimeToTap)
+            {
+                //touched = true;
+                touchManager.FailProcess();
+            }
             if (!rightTimeAvailableToChange)
             {
                 rightTimeAvailableToChange = true;
@@ -182,29 +184,44 @@ public class TransitionListener : MonoBehaviour
     {
         if (!testing) 
         {           
-            if (animationManager.animationList.Count > 0 && animator.GetInteger("AnimId") != 10)
+            if (animationManager.animationList.Count > 0)
             {
-                prevAnimInteger = currAnimInteger;
-                currAnimInteger = animationManager.animationIntegers[animationManager.animationList[0]];
+                if (!failed)
+                {
+                    prevAnimInteger = currAnimInteger;
+                    currAnimInteger = animationManager.animationIntegers[animationManager.animationList[0]];
+                    prevAnimId = animator.GetInteger("AnimId");
+                    animator.SetInteger("AnimId", currAnimInteger);
+                    currAnimId = animator.GetInteger("AnimId");
+                    helper.transform.position = animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition;
+                }
+                else 
+                {
+                    prevAnimInteger = currAnimInteger;
+                    currAnimInteger = 10;
+                    prevAnimId = animator.GetInteger("AnimId");
+                    animator.SetInteger("AnimId", 10);
+                    currAnimId = animator.GetInteger("AnimId");
+                }
+                
 
-                prevAnimId = animator.GetInteger("AnimId");
-                animator.SetInteger("AnimId", currAnimInteger);
-                currAnimId = animator.GetInteger("AnimId");
-                helper.transform.position = animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition;
+               
 
                 animCounter++;
 
                 //setListenTimeForCurrentKick(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
-
-                
-                
 
                 //print(" transition : " + prevAnimId + "_" + currAnimId + " : Duration : " + animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
                 if (animCounter > 1) 
                 {
                     print("REMOVING : " + animationManager.animationList[0]);
                     animationManager.animationList.RemoveAt(0);
-                    //print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
+                    print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
+                    /*
+                    print(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition);
+                    print(animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition);
+                    print(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
+                    */
                     moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, 
                         animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 
                         animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * (1 / animator.GetFloat("TimeFactor")));
@@ -271,7 +288,7 @@ public class TransitionListener : MonoBehaviour
         touched = false;
         animCounter = 0;
         //print(" XXXXXXXXXXXXXXXXXXXXXXX 222");
-        for (int i = 3; i > 0; i--) 
+        for (int i = 2; i > 0; i--) 
         {
             //print(" XXXXXXXXXXXXXXXXXXXXXXX ");
             yield return new WaitForSeconds(1f);
