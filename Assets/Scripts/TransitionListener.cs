@@ -200,14 +200,14 @@ public class TransitionListener : MonoBehaviour
                 
 
                 //print(" transition : " + prevAnimId + "_" + currAnimId + " : Duration : " + animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
-                if (prevAnimId != 0) 
+                if (animCounter > 1) 
                 {
                     print("REMOVING : " + animationManager.animationList[0]);
                     animationManager.animationList.RemoveAt(0);
                     //print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
                     moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, 
                         animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 
-                        animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * animator.GetFloat("TimeFactor"));
+                        animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * (1 / animator.GetFloat("TimeFactor")));
                 }
                 /*else
                 {
