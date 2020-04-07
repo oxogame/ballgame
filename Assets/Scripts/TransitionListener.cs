@@ -183,7 +183,7 @@ public class TransitionListener : MonoBehaviour
             if (animationManager.animationList.Count > 0)
             {
 
-                if (animCounter > 2 && !touched && rightTimeToTap)
+                if (animCounter > 1 && !touched && rightTimeToTap)
                 {
                     //touched = true;
                     touchManager.FailProcess();
@@ -206,9 +206,6 @@ public class TransitionListener : MonoBehaviour
                     currAnimId = animator.GetInteger("AnimId");
                 }
                 
-
-               
-
                 animCounter++;
 
                 //setListenTimeForCurrentKick(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
@@ -224,6 +221,9 @@ public class TransitionListener : MonoBehaviour
                     print(animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition);
                     print(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
                     */
+                    print(prevAnimId + " :: " + currAnimId);
+                    print(animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition);
+                    print(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
                     moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, 
                         animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 
                         animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * (1 / animator.GetFloat("TimeFactor")));
@@ -286,9 +286,11 @@ public class TransitionListener : MonoBehaviour
 
     IEnumerator Counter() 
     {
+        failed = false;
         animator.SetInteger("AnimId", 0);
         touched = false;
         animCounter = 0;
+        ball.position = new Vector3(1.21f, -2.04f, -0.26f);
         //print(" XXXXXXXXXXXXXXXXXXXXXXX 222");
         for (int i = 2; i > 0; i--) 
         {
