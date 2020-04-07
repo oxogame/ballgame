@@ -78,7 +78,7 @@ public class TransitionListener : MonoBehaviour
             }*/
 
         }
-        else if (Time.time < listenStop)
+        /*else if (Time.time < listenStop)
         {
             if (rightTimeAvailableToChange)
             {                
@@ -89,14 +89,10 @@ public class TransitionListener : MonoBehaviour
             {
                 Highlighter(true);
             }*/
-        }
+        //}*/
         else 
         {
-            if (animCounter > 2 && !touched && rightTimeToTap)
-            {
-                //touched = true;
-                touchManager.FailProcess();
-            }
+            
             if (!rightTimeAvailableToChange)
             {
                 rightTimeAvailableToChange = true;
@@ -186,6 +182,12 @@ public class TransitionListener : MonoBehaviour
         {           
             if (animationManager.animationList.Count > 0)
             {
+
+                if (animCounter > 2 && !touched && rightTimeToTap)
+                {
+                    //touched = true;
+                    touchManager.FailProcess();
+                }
                 if (!failed)
                 {
                     prevAnimInteger = currAnimInteger;
