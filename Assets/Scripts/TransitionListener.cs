@@ -30,20 +30,22 @@ public class TransitionListener : MonoBehaviour
     Transform ball, testCube;
     Vector3 midPoint;
     [SerializeField]
-    float ballHeightUnity = 1f, toleranceRange = 0.25f, highLightToggleFreq= 0.1f;
+    float ballHeightUnity = 1f, toleranceRange = 0.25f, highLightToggleFreq= 0.1f, helperHeightOffset = 0f;
     bool ballHighlightOn = false;
     float nextHighlightToggle = 0f;
     GameObject ballHeighlight;
     GameObject helper;
 
     float listenStop;
-    float listenStart;
+    public float listenStart;
 
     public bool rightTimeToTap = false;
     bool rightTimeAvailableToChange = true;
 
     public bool touched = false;
     public bool failed = false;
+    
+    
 
     [SerializeField]
     public Text startCounter;
@@ -195,7 +197,9 @@ public class TransitionListener : MonoBehaviour
                     prevAnimId = animator.GetInteger("AnimId");
                     animator.SetInteger("AnimId", currAnimInteger);
                     currAnimId = animator.GetInteger("AnimId");
-                    helper.transform.position = animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition;
+                    helper.transform.position = new Vector3(animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.x, 
+                        animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.y + helperHeightOffset, 
+                        animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.z);
                 }
                 else 
                 {
@@ -215,23 +219,11 @@ public class TransitionListener : MonoBehaviour
                 {
                     print("REMOVING : " + animationManager.animationList[0]);
                     animationManager.animationList.RemoveAt(0);
-                    print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
-                    /*
-                    print(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition);
-                    print(animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition);
-                    print(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
-                    */
-                    print(prevAnimId + " :: " + currAnimId);
-                    print(animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition);
-                    print(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
+                    //print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
                     moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, 
                         animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 
                         animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * (1 / animator.GetFloat("TimeFactor")));
                 }
-                /*else
-                {
-                    ball.DOMove(animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 0.3f).SetEase(Ease.InQuad);
-                }*/
             }
         }       
     }
@@ -273,6 +265,7 @@ public class TransitionListener : MonoBehaviour
     {
         float riseDuration = duration*(Mathf.Abs( midY - currentY ) / (Mathf.Abs(midY - currentY) + Mathf.Abs(midY - targetY)));
         float dropDuration = duration - riseDuration;
+        
         //print(" PORTIONS TOTAL : " + duration + " : riseDuration : " + riseDuration + " . dropDuration : " + dropDuration + " : riseDurationRatio : " + (midY - currentY / (midY - currentY + midY - targetY)));
         return new Vector2(riseDuration, dropDuration);
     }
@@ -281,6 +274,8 @@ public class TransitionListener : MonoBehaviour
     {
         listenStop = Time.time + toleranceRange;
         listenStart = Time.time + duration - toleranceRange;
+        touchManager.touchableStartTime = listenStart;
+        touchManager.bestTouchTime = Time.time + duration;
         //print(  " STOP :  " + listenStop + " :: Start :  " + listenStart);
     }
 
@@ -291,10 +286,8 @@ public class TransitionListener : MonoBehaviour
         touched = false;
         animCounter = 0;
         ball.position = new Vector3(1.21f, -2.04f, -0.26f);
-        //print(" XXXXXXXXXXXXXXXXXXXXXXX 222");
         for (int i = 2; i > 0; i--) 
         {
-            //print(" XXXXXXXXXXXXXXXXXXXXXXX ");
             yield return new WaitForSeconds(1f);
             startCounter.text = i.ToString();           
         }
@@ -323,5 +316,7 @@ public class TransitionListener : MonoBehaviour
         }*/
 
     }
+
+    
 
 }

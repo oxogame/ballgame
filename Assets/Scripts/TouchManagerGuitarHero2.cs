@@ -33,7 +33,16 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     public float currentLevelToleranceAmount = 0f;
     public float nextTouchCheck = 9999999;
     public bool tapOnce = true;
+   
+    public float bestTouchTime = 0f;
+    public float touchableStartTime = 0f;
+    Dictionary<string, float> tempSuccessRate;
+    int currentLevel = 1;
 
+    [SerializeField]
+    Text successRateText, successLevelText;
+
+    public LevelData levelData;
     // ---------------------------
     public GameObject green, red, tick, xx;
 
@@ -43,7 +52,8 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     void Start()
     {
         PrepareTheNodeList();
-        //print("# of Nodes : " + NodeList.Count);
+        tempSuccessRate = levelData.levelDatas[("Level" + currentLevel.ToString())].successRates;
+
     }
 
     void Update()
@@ -69,7 +79,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
    
         if ((Input.touchCount > 0 || Input.GetMouseButtonDown(0) ) ) 
         {
-            print("CLICKED");
+            //print("CLICKED");
             
             TapProcessTest();
             //TapProcess(Input.GetTouch(0));
@@ -163,6 +173,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     {
         print(" SUCCCFEEEEESSSSS");
         transitionListener.touched = true;
+        successLevelCalculator();
     }
 
     public void FailProcess()     
@@ -170,6 +181,8 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         print(" FAILEDDDD   :  " + transitionListener.animator.GetInteger("AnimId"));
         //transitionListener.animator.SetInteger("AnimId", 10);
         transitionListener.failed = true;
+        successRateText.text = "0";
+        successLevelText.text = "Failed";
     }
 
     
@@ -231,5 +244,33 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     }
 
     
+    void successLevelCalculator()
+    {
+        
+        float  successRate = successRateCalculator(Time.time);
+        print(" RATE : " + successRate);
+        if (tempSuccessRate["Perfect"] < successRate)
+        {
+            successTextDesigner("Perfect", successRate);
+        }
+        else if (tempSuccessRate["Good"] < successRate)
+        {
+            successTextDesigner("Good", successRate);
+        }
+        else 
+        {
+            successTextDesigner("Okay", successRate);
+        }
+    }
 
+    void successTextDesigner(string Level, float rate) 
+    {
+        successRateText.text = rate.ToString();
+        successLevelText.text = Level;
+    }
+    float successRateCalculator(float touchTime) 
+    {
+        print(" TouchTime : " + touchTime + " touchableStartTime : " + touchableStartTime+ " : " + (touchTime - touchableStartTime) + " / " + (bestTouchTime - touchableStartTime) + " :: " + (touchTime - touchableStartTime) / (bestTouchTime - touchableStartTime) + " bestTouchTime : " + bestTouchTime);
+        return ((touchTime - touchableStartTime) / (bestTouchTime - touchableStartTime));
+    }
 }
