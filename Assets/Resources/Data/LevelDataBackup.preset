@@ -1,0 +1,363 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LevelDataBackup
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 803a4bda836f21340b59d809a3af7945,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializedFormat
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializedBytes.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.ReferencedUnityObjects.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializedBytesString
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.Prefab
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.PrefabModifications.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.size
+    value: 25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[0].Name
+    value: levelDatas
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[0].Entry
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[0].Data
+    value: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Assets.Scripts.LevelSpecs,
+      Assembly-CSharp]], mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[1].Name
+    value: comparer
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[1].Entry
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[1].Data
+    value: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      mscorlib]], mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[2].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[2].Entry
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[2].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[3].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[3].Entry
+    value: 12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[3].Data
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[4].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[4].Entry
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[4].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[5].Name
+    value: $k
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[5].Entry
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[5].Data
+    value: Level1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[6].Name
+    value: $v
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[6].Entry
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[6].Data
+    value: 2|Assets.Scripts.LevelSpecs, Assembly-CSharp
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[7].Name
+    value: successRates
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[7].Entry
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[7].Data
+    value: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Single,
+      mscorlib]], mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[8].Name
+    value: comparer
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[8].Entry
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[8].Data
+    value: 4|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      mscorlib]], mscorlib
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[9].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[9].Entry
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[9].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[10].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[10].Entry
+    value: 12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[10].Data
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[11].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[11].Entry
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[11].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[12].Name
+    value: $k
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[12].Entry
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[12].Data
+    value: Perfect
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[13].Name
+    value: $v
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[13].Entry
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[13].Data
+    value: 0.6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[14].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[14].Entry
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[14].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[15].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[15].Entry
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[15].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[16].Name
+    value: $k
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[16].Entry
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[16].Data
+    value: Good
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[17].Name
+    value: $v
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[17].Entry
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[17].Data
+    value: 0.3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[18].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[18].Entry
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[18].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[19].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[19].Entry
+    value: 13
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[19].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[20].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[20].Entry
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[20].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[21].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[21].Entry
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[21].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[22].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[22].Entry
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[22].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[23].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[23].Entry
+    value: 13
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[23].Data
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[24].Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[24].Entry
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: serializationData.SerializationNodes.Array.data[24].Data
+    value: 
+    objectReference: {fileID: 0}
