@@ -39,8 +39,10 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     Dictionary<string, float> tempSuccessRate;
     int currentLevel = 1;
 
+    int perfectCounter = 0;
+
     [SerializeField]
-    Text successRateText, successLevelText;
+    Text successRateText, successLevelText, comboText;
 
     public LevelData levelData;
     // ---------------------------
@@ -183,6 +185,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         transitionListener.failed = true;
         successRateText.text = "0";
         successLevelText.text = "Failed";
+        comboCounter(false);
     }
 
     
@@ -252,14 +255,17 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         if (tempSuccessRate["Perfect"] < successRate)
         {
             successTextDesigner("Perfect", successRate);
+            comboCounter(true);
         }
         else if (tempSuccessRate["Good"] < successRate)
         {
             successTextDesigner("Good", successRate);
+            comboCounter(false);
         }
         else 
         {
             successTextDesigner("Okay", successRate);
+            comboCounter(false);
         }
     }
 
@@ -272,5 +278,22 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     {
         print(" TouchTime : " + touchTime + " touchableStartTime : " + touchableStartTime+ " : " + (touchTime - touchableStartTime) + " / " + (bestTouchTime - touchableStartTime) + " :: " + (touchTime - touchableStartTime) / (bestTouchTime - touchableStartTime) + " bestTouchTime : " + bestTouchTime);
         return ((touchTime - touchableStartTime) / (bestTouchTime - touchableStartTime));
+    }
+
+    void comboCounter(bool successLevel) 
+    {
+        if (successLevel)
+        {
+            perfectCounter++;
+            if (perfectCounter > 2) 
+            {
+                comboText.text = perfectCounter.ToString();
+            }
+        }
+        else 
+        {
+            perfectCounter = 0;
+            comboText.text = "Combo";
+        }
     }
 }
