@@ -45,6 +45,7 @@ public class AnimationManager : MonoBehaviour
         arrclip = playerAnimator.runtimeAnimatorController.animationClips;
         foreach (AnimationClip clip in arrclip)
         {
+            print(" KKKK : " + clip.name);
             animationClips.Add(clip.name, clip);
             //print("NAME : " + clip.name);
         }
