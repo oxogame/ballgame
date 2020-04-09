@@ -180,52 +180,49 @@ public class TransitionListener : MonoBehaviour
 
     void playAuto() 
     {
-        if (!testing) 
-        {           
-            if (animationManager.animationList.Count > 0)
+        if (animationManager.animationList.Count > 0)
+        {
+
+            if (animCounter > 1 && !touched && rightTimeToTap)
             {
-
-                if (animCounter > 1 && !touched && rightTimeToTap)
-                {
-                    //touched = true;
-                    touchManager.FailProcess();
-                }
-                if (!failed)
-                {
-                    prevAnimInteger = currAnimInteger;
-                    currAnimInteger = animationManager.animationIntegers[animationManager.animationList[0]];
-                    prevAnimId = animator.GetInteger("AnimId");
-                    animator.SetInteger("AnimId", currAnimInteger);
-                    currAnimId = animator.GetInteger("AnimId");
-                    helper.transform.position = new Vector3(animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.x, 
-                        animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.y + helperHeightOffset, 
-                        animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.z);
-                }
-                else 
-                {
-                    prevAnimInteger = currAnimInteger;
-                    currAnimInteger = 10;
-                    prevAnimId = animator.GetInteger("AnimId");
-                    animator.SetInteger("AnimId", 10);
-                    currAnimId = animator.GetInteger("AnimId");
-                }
-                
-                animCounter++;
-
-                //setListenTimeForCurrentKick(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
-
-                //print(" transition : " + prevAnimId + "_" + currAnimId + " : Duration : " + animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
-                if (animCounter > 1) 
-                {
-                    print("REMOVING : " + animationManager.animationList[0]);
-                    animationManager.animationList.RemoveAt(0);
-                    //print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
-                    moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, 
-                        animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 
-                        animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * (1 / animator.GetFloat("TimeFactor")));
-                }
+                //touched = true;
+                touchManager.FailProcess();
             }
-        }       
+            if (!failed)
+            {
+                prevAnimInteger = currAnimInteger;
+                currAnimInteger = animationManager.animationIntegers[animationManager.animationList[0]];
+                prevAnimId = animator.GetInteger("AnimId");
+                animator.SetInteger("AnimId", currAnimInteger);
+                currAnimId = animator.GetInteger("AnimId");
+                helper.transform.position = new Vector3(animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.x, 
+                    animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.y + helperHeightOffset, 
+                    animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.z);
+            }
+            else 
+            {
+                prevAnimInteger = currAnimInteger;
+                currAnimInteger = 10;
+                prevAnimId = animator.GetInteger("AnimId");
+                animator.SetInteger("AnimId", 10);
+                currAnimId = animator.GetInteger("AnimId");
+            }
+                
+            animCounter++;
+
+            //setListenTimeForCurrentKick(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
+
+            //print(" transition : " + prevAnimId + "_" + currAnimId + " : Duration : " + animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
+            if (animCounter > 1) 
+            {
+                //print("REMOVING : " + animationManager.animationList[0]);
+                animationManager.animationList.RemoveAt(0);
+                //print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
+                moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, 
+                    animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 
+                    animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * (1 / animator.GetFloat("TimeFactor")));
+            }
+        }
     }
 
     void moveTheBall(Vector3 currentPos, Vector3 targetPos, float duration)
@@ -242,13 +239,14 @@ public class TransitionListener : MonoBehaviour
 
     private void GoUp(Vector2 travelDurations, Vector3 targetPos)
     {
+        Debug.Log("ball goes up");
         ball.DOMoveY(midPoint.y, travelDurations.x).SetEase(Ease.OutQuad).OnComplete(()=>GoDown(travelDurations, targetPos));
         ball.DOMoveX(midPoint.x, travelDurations.x).SetEase(Ease.Linear);
         ball.DOMoveZ(midPoint.z, travelDurations.x).SetEase(Ease.Linear);
     }
     private void GoDown(Vector2 travelDurations, Vector3 targetPos)
     {
-        //print("GO DOWN : " + travelDurations.y);
+        print("GO DOWN : " + travelDurations.y);
         ball.DOMoveY(targetPos.y, travelDurations.y).SetEase(Ease.InQuad);
         ball.DOMoveX(targetPos.x, travelDurations.y).SetEase(Ease.Linear);
         ball.DOMoveZ(targetPos.z, travelDurations.y).SetEase(Ease.Linear);
@@ -285,7 +283,7 @@ public class TransitionListener : MonoBehaviour
         animator.SetInteger("AnimId", 0);
         touched = false;
         animCounter = 0;
-        ball.position = new Vector3(1.21f, -2.04f, -0.26f);
+        ball.position = animDataList.moveFigureList["0"].BallPosition;//new Vector3(1.21f, -2.04f, -0.26f);
         for (int i = 2; i > 0; i--) 
         {
             yield return new WaitForSeconds(1f);

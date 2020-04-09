@@ -54,8 +54,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: B
-  m_Speed: 0.6
+  m_Name: AyakSag
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2156780028173058020}
@@ -72,8 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -5879577102230641450, guid: 34a83aef6d5a6f144b1c8d0a508ef4a0,
-    type: 3}
+  m_Motion: {fileID: 417885616478531319, guid: 8ddc24bce175a0b41a7e187fc025d831, type: 3}
   m_Tag: 
   m_SpeedParameter: TimeFactor
   m_MirrorParameter: 
@@ -100,7 +99,7 @@ AnimatorStateTransition:
   m_TransitionOffset: 0.04
   m_ExitTime: 0.8
   m_HasExitTime: 0
-  m_HasFixedDuration: 1
+  m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
@@ -111,8 +110,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: A
-  m_Speed: 0.6
+  m_Name: AyakSol
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1240690796470314157}
@@ -129,7 +128,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -5972809686931603230, guid: 34a83aef6d5a6f144b1c8d0a508ef4a0,
+  m_Motion: {fileID: -1498010087492872569, guid: 8ddc24bce175a0b41a7e187fc025d831,
     type: 3}
   m_Tag: 
   m_SpeedParameter: TimeFactor
@@ -143,8 +142,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: C
-  m_Speed: 0.6
+  m_Name: DizSag
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4579801417390191564}
@@ -161,7 +160,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 6430362770057416350, guid: 34a83aef6d5a6f144b1c8d0a508ef4a0,
+  m_Motion: {fileID: 3153026496215879092, guid: 8ddc24bce175a0b41a7e187fc025d831,
     type: 3}
   m_Tag: 
   m_SpeedParameter: TimeFactor
@@ -175,8 +174,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: D
-  m_Speed: 0.6
+  m_Name: DizSol
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3250473149611964416}
@@ -193,7 +192,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -3657873206877816575, guid: 34a83aef6d5a6f144b1c8d0a508ef4a0,
+  m_Motion: {fileID: -7166468321462303600, guid: 8ddc24bce175a0b41a7e187fc025d831,
     type: 3}
   m_Tag: 
   m_SpeedParameter: TimeFactor
@@ -242,14 +241,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -1498010087492872569, guid: c62cd30acdb244e4c95165f82509d928,
+  m_Motion: {fileID: -4346097589131990702, guid: 8ddc24bce175a0b41a7e187fc025d831,
     type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: TimeFactor
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -399,7 +398,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NewAnimator
+  m_Name: gammaAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: AnimId
@@ -407,13 +406,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: TimeFactor
     m_Type: 1
-    m_DefaultFloat: 0.5
+    m_DefaultFloat: 0.8
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -572,7 +571,7 @@ AnimatorStateMachine:
     m_Position: {x: 450, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3586771336492531986}
-    m_Position: {x: -130, y: 450, z: 0}
+    m_Position: {x: -160, y: 520, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -688,7 +687,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: E
-  m_Speed: 0.6
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8428359986635367271}
@@ -703,7 +702,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -2752864260962967822, guid: 34a83aef6d5a6f144b1c8d0a508ef4a0,
+  m_Motion: {fileID: -3100369314251171874, guid: 8ddc24bce175a0b41a7e187fc025d831,
     type: 3}
   m_Tag: 
   m_SpeedParameter: TimeFactor
@@ -731,7 +730,7 @@ AnimatorStateTransition:
   m_TransitionOffset: 0
   m_ExitTime: 0.8
   m_HasExitTime: 0
-  m_HasFixedDuration: 1
+  m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
@@ -824,11 +823,11 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.2
   m_TransitionOffset: 0
-  m_ExitTime: 0.91477275
+  m_ExitTime: 0.8
   m_HasExitTime: 1
-  m_HasFixedDuration: 1
+  m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
