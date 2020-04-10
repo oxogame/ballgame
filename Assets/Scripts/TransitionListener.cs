@@ -302,6 +302,7 @@ public class TransitionListener : MonoBehaviour
             startCounter.text = i.ToString();           
         }
         yield return new WaitForSeconds(1f);
+        failed = false;
         startCounter.text = "GO";
         // Build Apk purposes
         
@@ -311,7 +312,7 @@ public class TransitionListener : MonoBehaviour
 
     void refreshValuesAtRePlay() 
     {
-        failed = false;
+        
         animator.SetInteger("AnimId", 0);
         touched = false;
         animCounter = 0;

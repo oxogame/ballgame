@@ -81,13 +81,13 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
    
         if ((Input.touchCount > 0 || Input.GetMouseButtonDown(0) ) ) 
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !transitionListener.failed)
             {
                 TapProcessTest();
             }
             else if (Input.touchCount > 0)
             {
-                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                if (Input.GetTouch(0).phase == TouchPhase.Began && !transitionListener.failed)
                 {
                     TapProcessTest();
                 }
@@ -163,6 +163,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
 
     void TapProcessTest() 
     {
+        print("TOUCHED OOOOOOOOOOOOOOOOOOO " );
         if (!transitionListener.animTestOn) 
         {
             if (transitionListener.rightTimeToTap)
@@ -180,7 +181,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
 
     void SuccessProcess() 
     {
-        print(" SUCCCFEEEEESSSSS");
+        print(" SUCCCEEEEESSSSS");
         transitionListener.touched = true;
         successLevelCalculator();
     }
