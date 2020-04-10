@@ -6,8 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Runtime Variables/Animation Data List", order = 1)]
 public class RV_AnimDataList : SerializedScriptableObject
 {
-    public List<AnimationVo> animList = new List<AnimationVo>();
-
     //[ShowInInspector]
     //[DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout)]
     public Dictionary<string,TransitionVo> tranList = new Dictionary<string, TransitionVo>();

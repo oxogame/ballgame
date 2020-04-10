@@ -11,12 +11,6 @@ namespace Assets.Scripts
     public class TransitionVo
     {
         public float TransitionTime;
-
-        public Vector3 BallPosition;
-
-        [Title("Temporary Datas")]
-        public Transform RefBall;
-
     }
 
     

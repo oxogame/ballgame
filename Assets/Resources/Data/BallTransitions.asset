@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7eabd35e5578b4b448ae6633bd0e6a56, type: 3}
-  m_Name: AnimationsOfGamma
+  m_Name: BallTransitions
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -34,7 +35,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 22
+      Data: 31
     - Name: 
       Entry: 7
       Data: 
@@ -46,25 +47,7 @@ MonoBehaviour:
       Data: 2|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.43373823
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 0.7284584
     - Name: 
       Entry: 8
       Data: 
@@ -82,25 +65,7 @@ MonoBehaviour:
       Data: 3|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 4.117878
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 0.7206812
     - Name: 
       Entry: 8
       Data: 
@@ -118,25 +83,7 @@ MonoBehaviour:
       Data: 4|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.06540394
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 1.56102371
     - Name: 
       Entry: 8
       Data: 
@@ -154,25 +101,7 @@ MonoBehaviour:
       Data: 5|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.781599045
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 2.77823639
     - Name: 
       Entry: 8
       Data: 
@@ -190,25 +119,7 @@ MonoBehaviour:
       Data: 6|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.695041656
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 1.24591827
     - Name: 
       Entry: 8
       Data: 
@@ -226,25 +137,7 @@ MonoBehaviour:
       Data: 7|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.03317642
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 3.02384949
     - Name: 
       Entry: 8
       Data: 
@@ -262,25 +155,7 @@ MonoBehaviour:
       Data: 8|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.83411026
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 2.68386841
     - Name: 
       Entry: 8
       Data: 
@@ -298,25 +173,7 @@ MonoBehaviour:
       Data: 9|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.9671364
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 5.22130871
     - Name: 
       Entry: 8
       Data: 
@@ -334,25 +191,7 @@ MonoBehaviour:
       Data: 10|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.706398
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 2.60511684
     - Name: 
       Entry: 8
       Data: 
@@ -370,25 +209,7 @@ MonoBehaviour:
       Data: 11|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.009285
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 2.88454437
     - Name: 
       Entry: 8
       Data: 
@@ -407,24 +228,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.9963722
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -442,25 +245,7 @@ MonoBehaviour:
       Data: 13|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.901104
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 1.31249237
     - Name: 
       Entry: 8
       Data: 
@@ -478,25 +263,7 @@ MonoBehaviour:
       Data: 14|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.02684021
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 1.60030365
     - Name: 
       Entry: 8
       Data: 
@@ -514,25 +281,7 @@ MonoBehaviour:
       Data: 15|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.13209915
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 1.55439
     - Name: 
       Entry: 8
       Data: 
@@ -551,24 +300,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.911140442
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -587,24 +318,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.8525276
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -623,24 +336,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.785282135
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -658,25 +353,7 @@ MonoBehaviour:
       Data: 19|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.37280655
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
+      Data: 1.86746216
     - Name: 
       Entry: 8
       Data: 
@@ -695,24 +372,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -731,24 +390,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -767,24 +408,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -803,24 +426,168 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
     - Name: 
       Entry: 8
       Data: 
-    - Name: RefBall
-      Entry: 6
+    - Name: 
+      Entry: 8
       Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 4_5
+    - Name: $v
+      Entry: 7
+      Data: 24|Assets.Scripts.TransitionVo, Assembly-CSharp
+    - Name: TransitionTime
+      Entry: 4
+      Data: 1.26476669
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 5_4
+    - Name: $v
+      Entry: 7
+      Data: 25|Assets.Scripts.TransitionVo, Assembly-CSharp
+    - Name: TransitionTime
+      Entry: 4
+      Data: 1.69969368
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 5_5
+    - Name: $v
+      Entry: 7
+      Data: 26|Assets.Scripts.TransitionVo, Assembly-CSharp
+    - Name: TransitionTime
+      Entry: 4
+      Data: 0.9409561
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 5_3
+    - Name: $v
+      Entry: 7
+      Data: 27|Assets.Scripts.TransitionVo, Assembly-CSharp
+    - Name: TransitionTime
+      Entry: 4
+      Data: 1.42817688
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 3_5
+    - Name: $v
+      Entry: 7
+      Data: 28|Assets.Scripts.TransitionVo, Assembly-CSharp
+    - Name: TransitionTime
+      Entry: 4
+      Data: 1.318409
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 5_2
+    - Name: $v
+      Entry: 7
+      Data: 29|Assets.Scripts.TransitionVo, Assembly-CSharp
+    - Name: TransitionTime
+      Entry: 4
+      Data: 1.46232986
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 2_5
+    - Name: $v
+      Entry: 7
+      Data: 30|Assets.Scripts.TransitionVo, Assembly-CSharp
+    - Name: TransitionTime
+      Entry: 4
+      Data: 2.64711761
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 5_1
+    - Name: $v
+      Entry: 7
+      Data: 31|Assets.Scripts.TransitionVo, Assembly-CSharp
+    - Name: TransitionTime
+      Entry: 4
+      Data: 0.933094
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 1_5
+    - Name: $v
+      Entry: 7
+      Data: 32|Assets.Scripts.TransitionVo, Assembly-CSharp
+    - Name: TransitionTime
+      Entry: 4
+      Data: 0.9431114
     - Name: 
       Entry: 8
       Data: 
@@ -835,14 +602,14 @@ MonoBehaviour:
       Data: 
     - Name: moveFigureList
       Entry: 7
-      Data: 24|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Assets.Scripts.AnimationMoveVo,
+      Data: 33|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Assets.Scripts.AnimationMoveVo,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 9
       Data: 1
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 7
     - Name: 
       Entry: 7
       Data: 
@@ -851,7 +618,7 @@ MonoBehaviour:
       Data: 1
     - Name: $v
       Entry: 7
-      Data: 25|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
+      Data: 34|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
     - Name: BallPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -884,7 +651,7 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 7
-      Data: 26|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
+      Data: 35|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
     - Name: BallPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -917,7 +684,7 @@ MonoBehaviour:
       Data: 3
     - Name: $v
       Entry: 7
-      Data: 27|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
+      Data: 36|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
     - Name: BallPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -950,7 +717,7 @@ MonoBehaviour:
       Data: 4
     - Name: $v
       Entry: 7
-      Data: 28|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
+      Data: 37|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
     - Name: BallPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -983,7 +750,7 @@ MonoBehaviour:
       Data: 10
     - Name: $v
       Entry: 7
-      Data: 29|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
+      Data: 38|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
     - Name: BallPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -1016,7 +783,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 7
-      Data: 30|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
+      Data: 39|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
     - Name: BallPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -1042,9 +809,41 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 40|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
+    - Name: BallPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.021
+    - Name: 
+      Entry: 4
+      Data: 6.815
+    - Name: 
+      Entry: 4
+      Data: 0.64
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RefBall
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
-  animList: []

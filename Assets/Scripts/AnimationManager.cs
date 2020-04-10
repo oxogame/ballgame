@@ -56,12 +56,12 @@ public class AnimationManager : MonoBehaviour
         animations = new Dictionary<string, List<string>> () 
         {
             {"common", new List<string>(){"SagAyakSektir", "SolAyakSektir"} },
-            {"rare", new List<string>(){"SagDizSektir", "SolDizSektir"} },
+            {"rare", new List<string>(){"SagDizSektir", "SolDizSektir", "KafaSektir"} },
         };
         animationIntegers = new Dictionary<string, int>()
         {
             {"SagAyakSektir", 2}, {"SolAyakSektir", 1},
-            {"SagDizSektir", 3}, {"SolDizSektir", 4},
+            {"SagDizSektir", 3}, {"SolDizSektir", 4}, {"KafaSektir", 5},
         };
     }
 

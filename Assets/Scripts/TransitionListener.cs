@@ -131,11 +131,13 @@ public class TransitionListener : MonoBehaviour
         if (testing)
         {
             print(Time.time - durationOfTransition);
-            if (animDataList.tranList.ContainsKey(prevAnimId + "_"+ currAnimId)) 
-            {
-                print("KAydediliyor : " + prevAnimId + "_" + currAnimId + " : " + (Time.time - durationOfTransition));
-                animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime = Time.time - durationOfTransition;               
-            }
+            
+            print("KAydediliyor : " + prevAnimId + "_" + currAnimId + " : " + (Time.time - durationOfTransition));
+
+            if (!animDataList.tranList.ContainsKey(prevAnimId + "_" + currAnimId))
+                animDataList.tranList.Add(prevAnimId + "_" + currAnimId, new Assets.Scripts.TransitionVo());
+
+            animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime = Time.time - durationOfTransition;               
             
             this.GetComponent<Animator>().speed = 0;
         }
@@ -192,6 +194,12 @@ public class TransitionListener : MonoBehaviour
     public void Play4()
     {
         Play(4);
+    }
+    
+    [Button(ButtonSizes.Gigantic)]
+    public void Play5()
+    {
+        Play(5);
     }
 
     void playAuto() 
