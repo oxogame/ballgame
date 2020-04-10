@@ -18,5 +18,10 @@ namespace Assets.Scripts
         {
             BallPosition = RefBall.position;
         }
+        [Button]
+        public void SetBallPosition()
+        {
+            RefBall.position = BallPosition  ;
+        }
     }
 }

@@ -16,11 +16,6 @@ namespace Assets.Scripts
 
         [Title("Temporary Datas")]
         public Transform RefBall;
-        [Button]
-        public void GetBallPosition()
-        {
-            BallPosition = RefBall.position;
-        }
 
     }
 
