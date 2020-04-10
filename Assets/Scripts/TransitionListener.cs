@@ -2,8 +2,8 @@
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using System.Collections.Generic;
 using System.Collections;
-
 
 public class TransitionListener : MonoBehaviour
 {
@@ -44,8 +44,24 @@ public class TransitionListener : MonoBehaviour
 
     public bool touched = false;
     public bool failed = false;
-    
-    
+
+    // AnimTEst ON 
+    public bool animTestOn = false;
+
+
+    Dictionary<string, List<Ease>> easeDict = new Dictionary<string, List<Ease>>() { {"Linear", new List<Ease>() {Ease.Linear, Ease.Linear } }, 
+                                                                                     {"Quad", new List<Ease>() { Ease.InQuad, Ease.OutQuad } },
+                                                                                     {"Quart", new List<Ease>() {Ease.InQuart, Ease.OutQuart } },
+                                                                                     {"Quint", new List<Ease>() {Ease.InQuint, Ease.OutQuint } },};
+    List<string> easeList = new List<string>() { "Linear", "Quad", "Quart", "Quint" };
+    public string selectedEase = "Quad";
+    int easeCounter = 0;
+
+    [SerializeField]
+    Text testText, easeText;
+    // AnimTest ON //
+
+
 
     [SerializeField]
     public Text startCounter;
@@ -183,7 +199,7 @@ public class TransitionListener : MonoBehaviour
         if (animationManager.animationList.Count > 0)
         {
 
-            if (animCounter > 1 && !touched && rightTimeToTap)
+            if (animCounter > 1 && !touched && rightTimeToTap && !animTestOn)
             {
                 //touched = true;
                 touchManager.FailProcess();
@@ -240,14 +256,14 @@ public class TransitionListener : MonoBehaviour
     private void GoUp(Vector2 travelDurations, Vector3 targetPos)
     {
         Debug.Log("ball goes up");
-        ball.DOMoveY(midPoint.y, travelDurations.x).SetEase(Ease.OutQuad).OnComplete(()=>GoDown(travelDurations, targetPos));
+        ball.DOMoveY(midPoint.y, travelDurations.x).SetEase(easeDict[selectedEase][1]).OnComplete(()=>GoDown(travelDurations, targetPos));
         ball.DOMoveX(midPoint.x, travelDurations.x).SetEase(Ease.Linear);
         ball.DOMoveZ(midPoint.z, travelDurations.x).SetEase(Ease.Linear);
     }
     private void GoDown(Vector2 travelDurations, Vector3 targetPos)
     {
         print("GO DOWN : " + travelDurations.y);
-        ball.DOMoveY(targetPos.y, travelDurations.y).SetEase(Ease.InQuad);
+        ball.DOMoveY(targetPos.y, travelDurations.y).SetEase(easeDict[selectedEase][0]);
         ball.DOMoveX(targetPos.x, travelDurations.y).SetEase(Ease.Linear);
         ball.DOMoveZ(targetPos.z, travelDurations.y).SetEase(Ease.Linear);
     }
@@ -279,11 +295,7 @@ public class TransitionListener : MonoBehaviour
 
     IEnumerator Counter() 
     {
-        failed = false;
-        animator.SetInteger("AnimId", 0);
-        touched = false;
-        animCounter = 0;
-        ball.position = animDataList.moveFigureList["0"].BallPosition;//new Vector3(1.21f, -2.04f, -0.26f);
+        refreshValuesAtRePlay();
         for (int i = 2; i > 0; i--) 
         {
             yield return new WaitForSeconds(1f);
@@ -295,6 +307,15 @@ public class TransitionListener : MonoBehaviour
         
         Play(0); // input doesn't matter
         // Build Apk purposes //
+    }
+
+    void refreshValuesAtRePlay() 
+    {
+        failed = false;
+        animator.SetInteger("AnimId", 0);
+        touched = false;
+        animCounter = 0;
+        ball.position = animDataList.moveFigureList["0"].BallPosition;//new Vector3(1.21f, -2.04f, -0.26f);
     }
 
     public void rePlay() 
@@ -315,6 +336,23 @@ public class TransitionListener : MonoBehaviour
 
     }
 
-    
+    public void AnimTestToggle() 
+    {
+        animTestOn = !animTestOn;
+        if (animTestOn)
+        {
+            testText.text = "On";
+        }
+        else 
+        {
+            testText.text = "Off";
+        }
+    }
+    public void EaseTestToggle()
+    {
+        easeCounter++;
+        selectedEase = easeList[easeCounter % easeList.Count];
+        easeText.text = selectedEase;
+    }
 
 }

@@ -81,13 +81,18 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
    
         if ((Input.touchCount > 0 || Input.GetMouseButtonDown(0) ) ) 
         {
-            //print("CLICKED");
-            
-            TapProcessTest();
-            //TapProcess(Input.GetTouch(0));
-        }
-            
-        
+            if (Input.GetMouseButtonDown(0))
+            {
+                TapProcessTest();
+            }
+            else if (Input.touchCount > 0)
+            {
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    TapProcessTest();
+                }
+            }
+        }                 
     }
 
     /*void Touched() // Long and short touch mechs.
@@ -158,17 +163,19 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
 
     void TapProcessTest() 
     {
-
-        if (transitionListener.rightTimeToTap)
+        if (!transitionListener.animTestOn) 
         {
-            // successful
-            SuccessProcess();
-        }
-        else 
-        {
-            // unsuccessful
-            FailProcess();
-        }      
+            if (transitionListener.rightTimeToTap)
+            {
+                // successful
+                SuccessProcess();
+            }
+            else
+            {
+                // unsuccessful
+                FailProcess();
+            }
+        }          
     }
 
     void SuccessProcess() 
