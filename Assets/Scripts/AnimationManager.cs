@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class AnimationManager : MonoBehaviour
 {
@@ -14,15 +15,20 @@ public class AnimationManager : MonoBehaviour
     Dictionary<string, List<string>> animations;
     public Dictionary<string, int> animationIntegers;
 
-    
+    [Header("SagAyakSektir, SolAyakSektir, SagDizSektir, SolDizSektir, KafaSektir")]
     public List<string> animationList = new List<string>();
 
     [SerializeField]
     [Tooltip("common , rare")]
     List<string> animationSerieDirections = new List<string>();
 
+    [Header("SagAyakSektir, SolAyakSektir, SagDizSektir, SolDizSektir, KafaSektir")]
+    public List<string> tempAnimationList = new List<string>();
+
     AnimationClip[] arrclip;
     Dictionary<string, AnimationClip> animationClips = new Dictionary<string, AnimationClip>();
+
+    public bool devAnimTestOn = false;
 
     float nextAnimation = 0f;
     void Start()
@@ -67,13 +73,26 @@ public class AnimationManager : MonoBehaviour
 
     public void GenerateAnimationSerieDirected() 
     {
-        animationList = new List<string>();
 
-        foreach (string rarity in animationSerieDirections) 
+
+        if (!devAnimTestOn)
         {
-            animationList.Add(animations[rarity][Random.Range(0, animations[rarity].Count)]);
+            animationList = new List<string>();
+            foreach (string rarity in animationSerieDirections)
+            {
+                animationList.Add(animations[rarity][Random.Range(0, animations[rarity].Count)]);
+            }
         }
+
     }
+
+    // devAnimTest Purposes 
+    [Button]
+    public void PusAnimList()
+    {
+        animationList = tempAnimationList;
+    }
+    // devAnimTest Purposes //
 
     void GenerateAnimationSerieFullRandom(int numberOfAnimations, int chanceOfRare) 
     {

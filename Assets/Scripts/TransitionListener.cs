@@ -4,6 +4,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
+using System.Linq;
 
 public class TransitionListener : MonoBehaviour
 {
@@ -75,6 +76,11 @@ public class TransitionListener : MonoBehaviour
         StartCoroutine(Counter());
         ballHeighlight = ball.GetChild(0).gameObject;
         helper = GameObject.Find("Helper2");
+
+        if (animationManager.devAnimTestOn) 
+        {
+            AnimTestToggle();
+        }
 
 
     }
@@ -240,6 +246,13 @@ public class TransitionListener : MonoBehaviour
             if (animCounter > 1) 
             {
                 //print("REMOVING : " + animationManager.animationList[0]);
+                if (animationManager.devAnimTestOn) // this if statement can be removed when this test is over
+                {
+                    
+                    //string tempAnim = animationManager.animationList[0];
+                    animationManager.animationList.Add(animationManager.animationList[0]);
+                    print(" ANIM ADD : " + animationManager.animationList.Count);
+                }
                 animationManager.animationList.RemoveAt(0);
                 //print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
                 moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, 

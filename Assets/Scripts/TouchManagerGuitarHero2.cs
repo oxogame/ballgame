@@ -163,7 +163,6 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
 
     void TapProcessTest() 
     {
-        print("TOUCHED OOOOOOOOOOOOOOOOOOO " );
         if (!transitionListener.animTestOn) 
         {
             if (transitionListener.rightTimeToTap)
