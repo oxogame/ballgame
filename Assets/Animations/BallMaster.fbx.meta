@@ -68,7 +68,7 @@ ModelImporter:
       name: AyakSol
       takeName: CINEMA_4D_Main
       internalID: 0
-      firstFrame: 0
+      firstFrame: 5
       lastFrame: 47
       wrapMode: 0
       orientationOffsetY: 0
@@ -89,7 +89,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.8159204
+      - time: 0.78568286
         functionName: CheckEvent
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: dc78d96187ef1d445b56c937b59fddf7,
@@ -105,7 +105,7 @@ ModelImporter:
       name: AyakSag
       takeName: CINEMA_4D_Main
       internalID: 0
-      firstFrame: 48
+      firstFrame: 55
       lastFrame: 92
       wrapMode: 0
       orientationOffsetY: 0
@@ -126,7 +126,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.8407961
+      - time: 0.78965616
         functionName: CheckEvent
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: dc78d96187ef1d445b56c937b59fddf7,
