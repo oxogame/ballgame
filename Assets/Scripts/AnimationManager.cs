@@ -28,6 +28,7 @@ public class AnimationManager : MonoBehaviour
     AnimationClip[] arrclip;
     Dictionary<string, AnimationClip> animationClips = new Dictionary<string, AnimationClip>();
 
+    [Header("must be checked before start")]
     public bool devAnimTestOn = false;
 
     float nextAnimation = 0f;
@@ -86,7 +87,8 @@ public class AnimationManager : MonoBehaviour
 
     }
 
-    // devAnimTest Purposes 
+    // devAnimTest Purposes
+    
     [Button]
     public void PusAnimList()
     {

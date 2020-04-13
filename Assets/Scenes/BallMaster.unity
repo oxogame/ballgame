@@ -1048,7 +1048,8 @@ MonoBehaviour:
   - common
   - rare
   - rare
-  devAnimTestOn: 1
+  tempAnimationList: []
+  devAnimTestOn: 0
 --- !u!4 &527326129
 Transform:
   m_ObjectHideFlags: 0
