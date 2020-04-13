@@ -2157,6 +2157,16 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1c8448fdd9273054ca2190e40e5b70d6, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 3a88f2ba266ca624685f97abea41dc79,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 3a88f2ba266ca624685f97abea41dc79,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3a88f2ba266ca624685f97abea41dc79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2252,11 +2262,11 @@ MonoBehaviour:
   prevAnimId: 0
   currAnimId: 0
   animCounter: 0
-  Data: {fileID: 0}
+  Data: {fileID: 11400000, guid: 2e7ae40d43f531b47b9f69b6bbc4d0ac, type: 2}
   animationManager: {fileID: 527326128}
   touchManager: {fileID: 645749936}
   animator: {fileID: 893022635}
-  testing: 0
+  testing: 1
   animDataList: {fileID: 11400000, guid: 2e7ae40d43f531b47b9f69b6bbc4d0ac, type: 2}
   ball: {fileID: 622614397}
   testCube: {fileID: 0}
@@ -3139,7 +3149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322059052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.457761, y: 7.8080034, z: -2.5360708}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
