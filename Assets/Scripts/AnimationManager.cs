@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using Assets.Scripts.Enum;
 
 public class AnimationManager : MonoBehaviour
 {
@@ -12,18 +13,18 @@ public class AnimationManager : MonoBehaviour
     [SerializeField]
     Animation animation;
 
-    Dictionary<string, List<string>> animations;
-    public Dictionary<string, int> animationIntegers;
+    Dictionary<string, List<Actions>> animations;
+    public Dictionary<Actions, int> animationIntegers;
 
     [Header("SagAyakSektir, SolAyakSektir, SagDizSektir, SolDizSektir, KafaSektir")]
-    public List<string> animationList = new List<string>();
+    public List<Actions> animationList = new List<Actions>();
 
     [SerializeField]
     [Tooltip("common , rare")]
     List<string> animationSerieDirections = new List<string>();
 
     [Header("SagAyakSektir, SolAyakSektir, SagDizSektir, SolDizSektir, KafaSektir")]
-    public List<string> tempAnimationList = new List<string>();
+    public List<Actions> tempAnimationList = new List<Actions>();
 
     AnimationClip[] arrclip;
     Dictionary<string, AnimationClip> animationClips = new Dictionary<string, AnimationClip>();
@@ -60,15 +61,15 @@ public class AnimationManager : MonoBehaviour
 
     void AssignAnimations() 
     {
-        animations = new Dictionary<string, List<string>> () 
+        animations = new Dictionary<string, List<Actions>> () 
         {
-            {"common", new List<string>(){"SagAyakSektir", "SolAyakSektir"} },
-            {"rare", new List<string>(){"SagDizSektir", "SolDizSektir", "KafaSektir"} },
+            {"common", new List<Actions>(){Actions.AyakSag, Actions.AyakSol} },
+            {"rare", new List<Actions>(){Actions.DizSag, Actions.DizSol, Actions.Kafa } }
         };
-        animationIntegers = new Dictionary<string, int>()
+        animationIntegers = new Dictionary<Actions, int>()
         {
-            {"SagAyakSektir", 2}, {"SolAyakSektir", 1},
-            {"SagDizSektir", 3}, {"SolDizSektir", 4}, {"KafaSektir", 5},
+            {Actions.AyakSag, 2}, {Actions.AyakSol, 1},
+            {Actions.DizSag, 3}, {Actions.DizSol, 4}, {Actions.Kafa, 5},
         };
     }
 
@@ -78,7 +79,7 @@ public class AnimationManager : MonoBehaviour
 
         if (!devAnimTestOn)
         {
-            animationList = new List<string>();
+            animationList = new List<Actions>();
             foreach (string rarity in animationSerieDirections)
             {
                 animationList.Add(animations[rarity][Random.Range(0, animations[rarity].Count)]);

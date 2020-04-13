@@ -1008,9 +1008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 893022636}
   animation: {fileID: 0}
-  animationList:
-  - SagAyakSektir
-  - SolAyakSektir
+  animationList: 0000000000000000
   animationSerieDirections:
   - common
   - common
@@ -1048,8 +1046,8 @@ MonoBehaviour:
   - common
   - rare
   - rare
-  tempAnimationList: []
-  devAnimTestOn: 0
+  tempAnimationList: 
+  devAnimTestOn: 1
 --- !u!4 &527326129
 Transform:
   m_ObjectHideFlags: 0
