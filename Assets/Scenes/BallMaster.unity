@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 893022636}
   animation: {fileID: 0}
-  animationList: 0000000000000000
+  animationList: 0100000002000000
   animationSerieDirections:
   - common
   - common
@@ -2268,7 +2268,7 @@ MonoBehaviour:
   animationManager: {fileID: 527326128}
   touchManager: {fileID: 645749936}
   animator: {fileID: 893022635}
-  testing: 1
+  testing: 0
   animDataList: {fileID: 11400000, guid: 2e7ae40d43f531b47b9f69b6bbc4d0ac, type: 2}
   ball: {fileID: 622614397}
   testCube: {fileID: 0}

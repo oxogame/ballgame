@@ -53,7 +53,7 @@ public class AnimationManager : MonoBehaviour
         arrclip = playerAnimator.runtimeAnimatorController.animationClips;
         foreach (AnimationClip clip in arrclip)
         {
-            print(" KKKK : " + clip.name);
+            //print(" KKKK : " + clip.name);
             animationClips.Add(clip.name, clip);
             //print("NAME : " + clip.name);
         }
@@ -93,7 +93,12 @@ public class AnimationManager : MonoBehaviour
     [Button]
     public void PusAnimList()
     {
-        animationList = tempAnimationList;
+        animationList = new List<Actions>();
+        foreach (Actions action in tempAnimationList) 
+        {
+            animationList.Add(action);
+        }
+
     }
     // devAnimTest Purposes //
 
