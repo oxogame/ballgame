@@ -70,7 +70,7 @@ public class TransitionListener : MonoBehaviour
     private void Start()
     {
         
-        testing = false;
+        //testing = false;
         animator = this.GetComponent<Animator>();
         animationManager = GameObject.Find("AnimationManager").GetComponent<AnimationManager>();
         StartCoroutine(Counter());
@@ -138,13 +138,21 @@ public class TransitionListener : MonoBehaviour
         {
             print(Time.time - durationOfTransition);
             
-            print("KAydediliyor : " + prevAnimId + "_" + currAnimId + " : " + (Time.time - durationOfTransition));
+            
 
             if (!animDataList.tranList.ContainsKey(prevAnimId + "_" + currAnimId))
                 animDataList.tranList.Add(prevAnimId + "_" + currAnimId, new Assets.Scripts.TransitionVo());
 
-            animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime = Time.time - durationOfTransition;               
-            
+            animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime = (Time.time - durationOfTransition) / (1 / animator.GetFloat("TimeFactor"));
+            print("KAydediliyor : " + prevAnimId + "_" + currAnimId + " : " + animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
+            /*float tempTimeFactor = animator.GetFloat("TimeFactor");
+            float tempDuration = Time.time - durationOfTransition;
+
+            print(" TIME FACTOR : " + tempTimeFactor + " tempDuration : " + tempDuration + " d/(1/a) : " + tempDuration / (1 / tempTimeFactor));
+            animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime = tempDuration / (1/tempTimeFactor);
+            print("KAydediliyor : " + prevAnimId + "_" + currAnimId + " : " + animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime); 
+            */
+
             this.GetComponent<Animator>().speed = 0;
         }
         else 

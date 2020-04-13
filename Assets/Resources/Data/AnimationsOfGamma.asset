@@ -15,7 +15,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -47,24 +48,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1.43373823
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -83,24 +66,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 4.117878
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -119,24 +84,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1.06540394
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -155,24 +102,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.781599045
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -191,24 +120,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.695041656
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -227,24 +138,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1.03317642
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -263,24 +156,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.83411026
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -299,24 +174,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.9671364
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -335,24 +192,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.706398
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -371,24 +210,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1.009285
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -407,24 +228,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.9963722
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -443,24 +246,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.901104
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -479,24 +264,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1.02684021
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -515,24 +282,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1.13209915
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -551,24 +300,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.911140442
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -587,24 +318,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.8525276
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -623,24 +336,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 0.785282135
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -659,24 +354,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1.37280655
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -695,24 +372,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -731,24 +390,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -767,24 +408,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -803,24 +426,6 @@ MonoBehaviour:
     - Name: TransitionTime
       Entry: 4
       Data: 1
-    - Name: BallPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RefBall
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -868,8 +473,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -901,8 +506,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -934,8 +539,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -967,8 +572,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -1000,8 +605,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -1033,8 +638,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -1047,4 +652,3 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  animList: []

@@ -15,7 +15,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -46,7 +47,7 @@ MonoBehaviour:
       Data: 2|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.9591408
+      Data: 0.709421158
     - Name: 
       Entry: 8
       Data: 
@@ -64,7 +65,7 @@ MonoBehaviour:
       Data: 3|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.729248047
+      Data: 0.5542164
     - Name: 
       Entry: 8
       Data: 
@@ -82,7 +83,7 @@ MonoBehaviour:
       Data: 4|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.9825058
+      Data: 0.988227844
     - Name: 
       Entry: 8
       Data: 
@@ -100,7 +101,7 @@ MonoBehaviour:
       Data: 5|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.884536743
+      Data: 0.8810547
     - Name: 
       Entry: 8
       Data: 
@@ -118,7 +119,7 @@ MonoBehaviour:
       Data: 6|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.36618042
+      Data: 1.35237432
     - Name: 
       Entry: 8
       Data: 
@@ -136,7 +137,7 @@ MonoBehaviour:
       Data: 7|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.48324585
+      Data: 1.4977417
     - Name: 
       Entry: 8
       Data: 
@@ -154,7 +155,7 @@ MonoBehaviour:
       Data: 8|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.957000732
+      Data: 0.9623665
     - Name: 
       Entry: 8
       Data: 
@@ -172,7 +173,7 @@ MonoBehaviour:
       Data: 9|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.869436264
+      Data: 0.8578377
     - Name: 
       Entry: 8
       Data: 
@@ -190,7 +191,7 @@ MonoBehaviour:
       Data: 10|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.21896362
+      Data: 1.21246338
     - Name: 
       Entry: 8
       Data: 
@@ -208,7 +209,7 @@ MonoBehaviour:
       Data: 11|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.62091064
+      Data: 1.60079348
     - Name: 
       Entry: 8
       Data: 
@@ -226,7 +227,7 @@ MonoBehaviour:
       Data: 12|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.17634583
+      Data: 1.178305
     - Name: 
       Entry: 8
       Data: 
@@ -244,7 +245,7 @@ MonoBehaviour:
       Data: 13|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.0533905
+      Data: 1.05325317
     - Name: 
       Entry: 8
       Data: 
@@ -262,7 +263,7 @@ MonoBehaviour:
       Data: 14|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.58879471
+      Data: 1.11972964
     - Name: 
       Entry: 8
       Data: 
@@ -280,7 +281,7 @@ MonoBehaviour:
       Data: 15|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.00720215
+      Data: 0.986370862
     - Name: 
       Entry: 8
       Data: 
@@ -298,7 +299,7 @@ MonoBehaviour:
       Data: 16|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.11245728
+      Data: 1.1103729
     - Name: 
       Entry: 8
       Data: 
@@ -316,7 +317,7 @@ MonoBehaviour:
       Data: 17|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.983947754
+      Data: 1.004242
     - Name: 
       Entry: 8
       Data: 
@@ -334,7 +335,7 @@ MonoBehaviour:
       Data: 18|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.7420654
+      Data: 0.7389588
     - Name: 
       Entry: 8
       Data: 
@@ -352,7 +353,7 @@ MonoBehaviour:
       Data: 19|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.31030273
+      Data: 1.31154788
     - Name: 
       Entry: 8
       Data: 
@@ -442,7 +443,7 @@ MonoBehaviour:
       Data: 24|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.255539
+      Data: 1.008075
     - Name: 
       Entry: 8
       Data: 
@@ -460,7 +461,7 @@ MonoBehaviour:
       Data: 25|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.69641113
+      Data: 1.6597656
     - Name: 
       Entry: 8
       Data: 
@@ -478,7 +479,7 @@ MonoBehaviour:
       Data: 26|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 0.9405594
+      Data: 0.8033447
     - Name: 
       Entry: 8
       Data: 
@@ -496,7 +497,7 @@ MonoBehaviour:
       Data: 27|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.42950439
+      Data: 1.39601445
     - Name: 
       Entry: 8
       Data: 
@@ -514,7 +515,7 @@ MonoBehaviour:
       Data: 28|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.47644043
+      Data: 1.21914065
     - Name: 
       Entry: 8
       Data: 
@@ -532,7 +533,7 @@ MonoBehaviour:
       Data: 29|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.19737244
+      Data: 1.1559571
     - Name: 
       Entry: 8
       Data: 
@@ -550,7 +551,7 @@ MonoBehaviour:
       Data: 30|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.37677
+      Data: 1.12534177
     - Name: 
       Entry: 8
       Data: 
@@ -568,7 +569,7 @@ MonoBehaviour:
       Data: 31|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.51080322
+      Data: 1.42882085
     - Name: 
       Entry: 8
       Data: 
@@ -586,7 +587,7 @@ MonoBehaviour:
       Data: 32|Assets.Scripts.TransitionVo, Assembly-CSharp
     - Name: TransitionTime
       Entry: 4
-      Data: 1.40000916
+      Data: 1.14832151
     - Name: 
       Entry: 8
       Data: 
@@ -634,8 +635,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -667,8 +668,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -700,8 +701,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -725,16 +726,16 @@ MonoBehaviour:
       Data: 0.545
     - Name: 
       Entry: 4
-      Data: 3.88
+      Data: 4.05
     - Name: 
       Entry: 4
-      Data: -1.493
+      Data: -1.27
     - Name: 
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -766,8 +767,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -799,8 +800,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -824,7 +825,7 @@ MonoBehaviour:
       Data: 0.125
     - Name: 
       Entry: 4
-      Data: 7.072
+      Data: 7.026
     - Name: 
       Entry: 4
       Data: 0.64
@@ -832,8 +833,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: RefBall
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
