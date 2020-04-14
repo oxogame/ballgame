@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 893022636}
   animation: {fileID: 0}
-  animationList: 0100000002000000
+  animationList: 
   animationSerieDirections:
   - common
   - common
@@ -1046,8 +1046,7 @@ MonoBehaviour:
   - common
   - rare
   - rare
-  tempAnimationList: 
-  devAnimTestOn: 1
+  devAnimTestOn: 0
 --- !u!4 &527326129
 Transform:
   m_ObjectHideFlags: 0
@@ -2280,7 +2279,7 @@ MonoBehaviour:
   rightTimeToTap: 0
   touched: 0
   failed: 0
-  animTestOn: 0
+  animTestOn: 1
   selectedEase: Quad
   testText: {fileID: 556919067}
   easeText: {fileID: 1972528671}
@@ -2533,6 +2532,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionListener: {fileID: 893022637}
   animationManager: {fileID: 527326128}
+  currentTestMode: 'PlayAnimSet is ON '
+  tempAnimationList: 
 --- !u!4 &936810682
 Transform:
   m_ObjectHideFlags: 0

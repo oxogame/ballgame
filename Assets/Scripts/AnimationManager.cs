@@ -53,7 +53,11 @@ public class AnimationManager : MonoBehaviour
         foreach (AnimationClip clip in arrclip)
         {
             //print(" KKKK : " + clip.name);
-            animationClips.Add(clip.name, clip);
+            if (!animationClips.ContainsKey(clip.name)) 
+            {
+                animationClips.Add(clip.name, clip);
+            }
+            
             //print("NAME : " + clip.name);
         }
     }
