@@ -22,9 +22,8 @@ public class AnimationManager : MonoBehaviour
     [SerializeField]
     [Tooltip("common , rare")]
     List<string> animationSerieDirections = new List<string>();
-
-    [Header("SagAyakSektir, SolAyakSektir, SagDizSektir, SolDizSektir, KafaSektir")]
-    public List<Actions> tempAnimationList = new List<Actions>();
+   
+   
 
     AnimationClip[] arrclip;
     Dictionary<string, AnimationClip> animationClips = new Dictionary<string, AnimationClip>();
@@ -75,32 +74,13 @@ public class AnimationManager : MonoBehaviour
 
     public void GenerateAnimationSerieDirected() 
     {
-
-
-        if (!devAnimTestOn)
-        {
-            animationList = new List<Actions>();
-            foreach (string rarity in animationSerieDirections)
-            {
-                animationList.Add(animations[rarity][Random.Range(0, animations[rarity].Count)]);
-            }
-        }
-
-    }
-
-    // devAnimTest Purposes
-    
-    [Button]
-    public void PusAnimList()
-    {
         animationList = new List<Actions>();
-        foreach (Actions action in tempAnimationList) 
+        foreach (string rarity in animationSerieDirections)
         {
-            animationList.Add(action);
+            animationList.Add(animations[rarity][Random.Range(0, animations[rarity].Count)]);
         }
-
     }
-    // devAnimTest Purposes //
+
 
     void GenerateAnimationSerieFullRandom(int numberOfAnimations, int chanceOfRare) 
     {
