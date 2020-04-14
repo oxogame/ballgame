@@ -180,12 +180,22 @@ public class TransitionListener : MonoBehaviour
         }
     }
 
-    [Button(ButtonSizes.Gigantic)]
-    public void PlayAnim() 
+    [Button(ButtonSizes.Large)]
+    public void PlayKaldırmaSag2() 
     {
-        Play(animator.GetInteger("AnimId"));
-    }   
+        animator.Play("KaldırmaSag");
+        animator.speed = 1;
+        animator.SetInteger("AnimId", 100);
+    }
 
+    [Button(ButtonSizes.Large)]
+    public void PlayKaldırmaSol1()
+    {
+        animator.Play("KaldırmaSol");
+        animator.speed = 1;
+        animator.SetInteger("AnimId", 100);
+
+    }
     [Button(ButtonSizes.Gigantic)]
     public void Play1()
     {       
@@ -285,9 +295,11 @@ public class TransitionListener : MonoBehaviour
     private void GoUp(Vector2 travelDurations, Vector3 targetPos)
     {
         Debug.Log("ball goes up");
+        ball.DOKill();
         ball.DOMoveY(midPoint.y, travelDurations.x).SetEase(easeDict[selectedEase][1]).OnComplete(()=>GoDown(travelDurations, targetPos));
         ball.DOMoveX(midPoint.x, travelDurations.x).SetEase(Ease.Linear);
         ball.DOMoveZ(midPoint.z, travelDurations.x).SetEase(Ease.Linear);
+        // ball rotation will bee added.
     }
     private void GoDown(Vector2 travelDurations, Vector3 targetPos)
     {
@@ -322,9 +334,26 @@ public class TransitionListener : MonoBehaviour
         //print(  " STOP :  " + listenStop + " :: Start :  " + listenStart);
     }
 
+    public void rePlay() 
+    {
+        print("BUTTON ACTIVE");
+        animationManager.GenerateAnimationSerieDirected();
+        refreshValuesAtRePlay();
+        StartCoroutine(Counter());
+    }
+
+    void refreshValuesAtRePlay() 
+    {
+        animator.SetInteger("AnimId", 0);
+        animator.Play("Bosta");
+        touched = false;
+        animCounter = 0;
+        ball.DOKill(false);
+        ball.position = animDataList.moveFigureList["0"].BallPosition;//new Vector3(1.21f, -2.04f, -0.26f);
+    }
+
     IEnumerator Counter() 
     {
-        refreshValuesAtRePlay();
         for (int i = 2; i > 0; i--) 
         {
             yield return new WaitForSeconds(1f);
@@ -337,22 +366,6 @@ public class TransitionListener : MonoBehaviour
         
         Play(0); // input doesn't matter
         // Build Apk purposes //
-    }
-
-    void refreshValuesAtRePlay() 
-    {
-        
-        animator.SetInteger("AnimId", 0);
-        touched = false;
-        animCounter = 0;
-        ball.position = animDataList.moveFigureList["0"].BallPosition;//new Vector3(1.21f, -2.04f, -0.26f);
-    }
-
-    public void rePlay() 
-    {
-        print("BUTTON ACTIVE");
-        animationManager.GenerateAnimationSerieDirected();
-        StartCoroutine(Counter());
     }
 
     void Highlighter(bool on) 

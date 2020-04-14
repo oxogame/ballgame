@@ -1046,7 +1046,7 @@ MonoBehaviour:
   - common
   - rare
   - rare
-  devAnimTestOn: 0
+  devAnimTestOn: 1
 --- !u!4 &527326129
 Transform:
   m_ObjectHideFlags: 0
@@ -1059,7 +1059,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &536969881 stripped
 RectTransform:
@@ -1451,7 +1451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622614393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.64, y: 0.42000008, z: -1.4100001}
+  m_LocalPosition: {x: 0.66, y: 0.47, z: -0.931}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1681154342}
@@ -2206,7 +2206,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 3a88f2ba266ca624685f97abea41dc79,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3a88f2ba266ca624685f97abea41dc79,
         type: 3}
@@ -2279,7 +2279,7 @@ MonoBehaviour:
   rightTimeToTap: 0
   touched: 0
   failed: 0
-  animTestOn: 1
+  animTestOn: 0
   selectedEase: Quad
   testText: {fileID: 556919067}
   easeText: {fileID: 1972528671}
@@ -2532,7 +2532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionListener: {fileID: 893022637}
   animationManager: {fileID: 527326128}
-  currentTestMode: 'PlayAnimSet is ON '
+  currentTestMode: 'DevAnimTest is ON '
   tempAnimationList: 
 --- !u!4 &936810682
 Transform:
