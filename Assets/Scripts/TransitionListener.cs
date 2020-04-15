@@ -62,7 +62,10 @@ public class TransitionListener : MonoBehaviour
     Text testText, easeText;
     // AnimTest ON //
 
-
+    public bool headRotOn = false;
+    List<int> headRotActions = new List<int>() {1,2,3,4 };
+    [SerializeField]
+    float headRotSpeed = 1f;
 
     [SerializeField]
     public Text startCounter;
@@ -128,9 +131,18 @@ public class TransitionListener : MonoBehaviour
                 Highlighter(false);
             }
         }
+        
+        if (headRotOn) 
+        {
+            var lookPos = ball.position - head.position;
+            //lookPos.z = 0;
+            //lookPos.x = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            head.rotation = Quaternion.Slerp(head.rotation, rotation, Time.deltaTime * headRotSpeed);
 
-        //head.LookAt(new Vector3(head.position.x, ball.position.y, ball.position.z));
-        head.LookAt(new Vector3(head.position.x, head.position.y - ((head.position.y - ball.position.y) / 2), head.position.z - ((head.position.z - ball.position.z) / 2) ) );
+            //head.LookAt(new Vector3(head.position.x, ball.position.y, ball.position.z));
+            //head.LookAt(new Vector3(head.position.x - ((head.position.x - ball.position.x) / 2), head.position.y - ((head.position.y - ball.position.y) / 2), head.position.z - ((head.position.z - ball.position.z) / 2)));
+        }
     }
 
     // Animasyon Eventlerinden Topun vucuda degdigi anda tetikleniyor.
@@ -244,6 +256,14 @@ public class TransitionListener : MonoBehaviour
             {
                 prevAnimInteger = currAnimInteger;
                 currAnimInteger = animationManager.animationIntegers[animationManager.animationList[0]];
+                if (headRotActions.Contains(currAnimInteger))
+                {
+                    headRotOn = true;
+                }
+                else 
+                {
+                    headRotOn = false;
+                }
                 prevAnimId = animator.GetInteger("AnimId");
                 animator.SetInteger("AnimId", currAnimInteger);
                 currAnimId = animator.GetInteger("AnimId");
@@ -308,7 +328,7 @@ public class TransitionListener : MonoBehaviour
     }
     private void GoDown(Vector2 travelDurations, Vector3 targetPos)
     {
-        print("GO DOWN : " + travelDurations.y);
+        //print("GO DOWN : " + travelDurations.y);
         ball.DOMoveY(targetPos.y, travelDurations.y).SetEase(easeDict[selectedEase][0]);
         ball.DOMoveX(targetPos.x, travelDurations.y).SetEase(Ease.Linear);
         ball.DOMoveZ(targetPos.z, travelDurations.y).SetEase(Ease.Linear);
