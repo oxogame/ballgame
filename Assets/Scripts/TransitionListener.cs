@@ -289,6 +289,7 @@ public class TransitionListener : MonoBehaviour
         //Instantiate(testCube, targetPos, Quaternion.identity);
 
         GoUp(travelDurations, targetPos);
+        ball.DORotate(new Vector3(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360)), duration, RotateMode.Fast);
 
     }
 

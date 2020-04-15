@@ -681,7 +681,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 12
-      Data: 7
+      Data: 8
     - Name: 
       Entry: 7
       Data: 
@@ -861,13 +861,13 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.66
+      Data: 0.287
     - Name: 
       Entry: 4
-      Data: 0.47
+      Data: 0.175
     - Name: 
       Entry: 4
-      Data: -0.931
+      Data: -2.213
     - Name: 
       Entry: 8
       Data: 
@@ -901,6 +901,39 @@ MonoBehaviour:
     - Name: 
       Entry: 4
       Data: 0.64
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RefBall
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 100
+    - Name: $v
+      Entry: 7
+      Data: 45|Assets.Scripts.AnimationMoveVo, Assembly-CSharp
+    - Name: BallPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
