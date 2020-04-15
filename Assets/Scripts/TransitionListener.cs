@@ -28,7 +28,7 @@ public class TransitionListener : MonoBehaviour
     RV_AnimDataList animDataList;
 
     [SerializeField]
-    Transform ball, testCube;
+    Transform ball, testCube, head;
     Vector3 midPoint;
     [SerializeField]
     float ballHeightUnity = 1f, toleranceRange = 0.25f, highLightToggleFreq= 0.1f, helperHeightOffset = 0f;
@@ -87,6 +87,7 @@ public class TransitionListener : MonoBehaviour
 
     private void Update()
     {
+
         if (Time.time > listenStart)
         {           
             
@@ -127,6 +128,9 @@ public class TransitionListener : MonoBehaviour
                 Highlighter(false);
             }
         }
+
+        //head.LookAt(new Vector3(head.position.x, ball.position.y, ball.position.z));
+        head.LookAt(new Vector3(head.position.x, head.position.y - ((head.position.y - ball.position.y) / 2), head.position.z - ((head.position.z - ball.position.z) / 2) ) );
     }
 
     // Animasyon Eventlerinden Topun vucuda degdigi anda tetikleniyor.
