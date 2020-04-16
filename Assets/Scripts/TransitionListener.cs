@@ -31,7 +31,7 @@ public class TransitionListener : MonoBehaviour
     Transform ball, testCube, head;
     Vector3 midPoint;
     [SerializeField]
-    float ballHeightUnity = 1f, toleranceRange = 0.25f, highLightToggleFreq= 0.1f, helperHeightOffset = 0f;
+    float ballHeightUnity = 1f, toleranceRange = 0.25f, highLightToggleFreq= 0.1f, helperHeightOffset = 0f, ballHeadHeightDiffUpward = 1f, ballHeadHeightDiffDownward = 1f;
     bool ballHighlightOn = false;
     float nextHighlightToggle = 0f;
     GameObject ballHeighlight;
@@ -131,17 +131,26 @@ public class TransitionListener : MonoBehaviour
                 Highlighter(false);
             }
         }
-        
-        if (headRotOn) 
+        print(" ballHeadHeightDiffUpward :: " + (head.position.y - ball.position.y) + "ballHeadHeightDiffDownward : "+ (head.position.y - ball.position.y) );
+        if (headRotOn && ( ballHeadHeightDiffUpward < head.position.y - ball.position.y) || (ballHeadHeightDiffDownward > head.position.y - ball.position.y))
         {
+            
             var lookPos = ball.position - head.position;
             //lookPos.z = 0;
             //lookPos.x = 0;
             var rotation = Quaternion.LookRotation(lookPos);
+
             head.rotation = Quaternion.Slerp(head.rotation, rotation, Time.deltaTime * headRotSpeed);
 
-            //head.LookAt(new Vector3(head.position.x, ball.position.y, ball.position.z));
-            //head.LookAt(new Vector3(head.position.x - ((head.position.x - ball.position.x) / 2), head.position.y - ((head.position.y - ball.position.y) / 2), head.position.z - ((head.position.z - ball.position.z) / 2)));
+            //head.DOLocalRotate(lookPos, headRotSpeed, RotateMode.Fast);
+
+            head.localEulerAngles = new Vector3(head.localEulerAngles.x, head.localEulerAngles.y, 0f);
+            
+        }
+        else
+        {
+            //head.rotation = Quaternion.Slerp(head.rotation, Quaternion.Euler(0f,0f,0f), Time.deltaTime * headRotSpeed);
+            head.localRotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
 
@@ -259,10 +268,13 @@ public class TransitionListener : MonoBehaviour
                 if (headRotActions.Contains(currAnimInteger))
                 {
                     headRotOn = true;
+                    
+                    //head.DOLookAt(ball, duration);
                 }
                 else 
                 {
                     headRotOn = false;
+                   
                 }
                 prevAnimId = animator.GetInteger("AnimId");
                 animator.SetInteger("AnimId", currAnimInteger);
@@ -309,6 +321,7 @@ public class TransitionListener : MonoBehaviour
         midPoint = midPointFinder(currentPos, targetPos, duration);
         Vector2 travelDurations = travelDurationPortions(currentPos.y, targetPos.y, midPoint.y, duration);
         setListenTimeForCurrentKick(duration);
+
         //Instantiate(testCube, midPoint, Quaternion.identity);
         //Instantiate(testCube, targetPos, Quaternion.identity);
 
