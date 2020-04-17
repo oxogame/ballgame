@@ -55,7 +55,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     {
         PrepareTheNodeList();
         tempSuccessRate = levelData.levelDatas[("Level" + currentLevel.ToString())].successRates;
-
+        
     }
 
     void Update()
@@ -188,6 +188,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     public void FailProcess()     
     {
         print(" FAILEDDDD   :  " + transitionListener.animator.GetInteger("AnimId"));
+        //transitionListener.headRotOn = false;
         //transitionListener.animator.SetInteger("AnimId", 10);
         transitionListener.failed = true;
         successRateText.text = "0";
@@ -258,11 +259,12 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     {
         
         float  successRate = successRateCalculator(Time.time);
-        print(" RATE : " + successRate);
+        //print(" RATE : " + successRate);
         if (tempSuccessRate["Perfect"] < successRate)
         {
             successTextDesigner("Perfect", successRate);
             comboCounter(true);
+            powerBarController(1);
         }
         else if (tempSuccessRate["Good"] < successRate)
         {
@@ -283,7 +285,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     }
     float successRateCalculator(float touchTime) 
     {
-        print(" TouchTime : " + touchTime + " touchableStartTime : " + touchableStartTime+ " : " + (touchTime - touchableStartTime) + " / " + (bestTouchTime - touchableStartTime) + " :: " + (touchTime - touchableStartTime) / (bestTouchTime - touchableStartTime) + " bestTouchTime : " + bestTouchTime);
+        //print(" TouchTime : " + touchTime + " touchableStartTime : " + touchableStartTime+ " : " + (touchTime - touchableStartTime) + " / " + (bestTouchTime - touchableStartTime) + " :: " + (touchTime - touchableStartTime) / (bestTouchTime - touchableStartTime) + " bestTouchTime : " + bestTouchTime);
         return ((touchTime - touchableStartTime) / (bestTouchTime - touchableStartTime));
     }
 
@@ -302,5 +304,17 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
             perfectCounter = 0;
             comboText.text = "Combo";
         }
+    }
+
+    void powerBarController(int unit) 
+    {
+        if (powerBar.rectTransform.anchoredPosition.x < 1)
+        {
+            powerBar.rectTransform.anchoredPosition = new Vector3(powerBar.rectTransform.anchoredPosition.x + (powerBarStep * unit), 0f, 0f);
+        }
+    }
+    public void refreshPowerBar() 
+    {
+        powerBar.rectTransform.anchoredPosition = new Vector3(-337, 0f, 0f);
     }
 }

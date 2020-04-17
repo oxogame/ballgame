@@ -12,8 +12,8 @@ public class TransitionListener : MonoBehaviour
     [SerializeField]
     private int prevAnimId, currAnimId;
     public int animCounter = 0;
-    private int currAnimInteger;
-    private int prevAnimInteger;
+    //private int currAnimInteger;
+    //private int prevAnimInteger;
 
     public RV_AnimDataList Data;
 
@@ -48,7 +48,7 @@ public class TransitionListener : MonoBehaviour
 
     // AnimTEst ON 
     public bool animTestOn = false;
-
+    public bool specialAnim = false;
 
     Dictionary<string, List<Ease>> easeDict = new Dictionary<string, List<Ease>>() { {"Linear", new List<Ease>() {Ease.Linear, Ease.Linear } }, 
                                                                                      {"Quad", new List<Ease>() { Ease.InQuad, Ease.OutQuad } },
@@ -131,19 +131,13 @@ public class TransitionListener : MonoBehaviour
                 Highlighter(false);
             }
         }
-        print(" ballHeadHeightDiffUpward :: " + (head.position.y - ball.position.y) + "ballHeadHeightDiffDownward : "+ (head.position.y - ball.position.y) );
-        if (headRotOn && ( ballHeadHeightDiffUpward < head.position.y - ball.position.y) || (ballHeadHeightDiffDownward > head.position.y - ball.position.y))
+        //print(" ballHeadHeightDiffUpward :: " + (head.position.y - ball.position.y) + "ballHeadHeightDiffDownward : "+ (head.position.y - ball.position.y) );
+        if (headRotOn && (( ballHeadHeightDiffUpward < head.position.y - ball.position.y) || (ballHeadHeightDiffDownward > head.position.y - ball.position.y)))
         {
-            
             var lookPos = ball.position - head.position;
-            //lookPos.z = 0;
-            //lookPos.x = 0;
             var rotation = Quaternion.LookRotation(lookPos);
 
             head.rotation = Quaternion.Slerp(head.rotation, rotation, Time.deltaTime * headRotSpeed);
-
-            //head.DOLocalRotate(lookPos, headRotSpeed, RotateMode.Fast);
-
             head.localEulerAngles = new Vector3(head.localEulerAngles.x, head.localEulerAngles.y, 0f);
             
         }
@@ -261,35 +255,23 @@ public class TransitionListener : MonoBehaviour
                 //touched = true;
                 touchManager.FailProcess();
             }
+
             if (!failed)
             {
-                prevAnimInteger = currAnimInteger;
-                currAnimInteger = animationManager.animationIntegers[animationManager.animationList[0]];
-                if (headRotActions.Contains(currAnimInteger))
+                if (specialAnim)
                 {
-                    headRotOn = true;
-                    
-                    //head.DOLookAt(ball, duration);
+                    PlaySpecialMoveAnim(); // SpecialAnim'e event atilacak ve o eventte specialAnim bool'u false'a cevirilecek.
+
                 }
                 else 
                 {
-                    headRotOn = false;
-                   
+                    SetNextAnim(animationManager.animationIntegers[animationManager.animationList[0]]);
                 }
-                prevAnimId = animator.GetInteger("AnimId");
-                animator.SetInteger("AnimId", currAnimInteger);
-                currAnimId = animator.GetInteger("AnimId");
-                helper.transform.position = new Vector3(animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.x, 
-                    animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.y + helperHeightOffset, 
-                    animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition.z);
+                              
             }
             else 
             {
-                prevAnimInteger = currAnimInteger;
-                currAnimInteger = 10;
-                prevAnimId = animator.GetInteger("AnimId");
-                animator.SetInteger("AnimId", 10);
-                currAnimId = animator.GetInteger("AnimId");
+                SetNextAnim(10);
             }
                 
             animCounter++;
@@ -305,14 +287,29 @@ public class TransitionListener : MonoBehaviour
                     
                     //string tempAnim = animationManager.animationList[0];
                     animationManager.animationList.Add(animationManager.animationList[0]);
-                    print(" ANIM ADD : " + animationManager.animationList.Count);
+                    //print(" ANIM ADD : " + animationManager.animationList.Count);
                 }
                 animationManager.animationList.RemoveAt(0);
-                //print(" POS ERROR : prev : " + prevAnimInteger + " curr : " + currAnimInteger);
-                moveTheBall(animDataList.moveFigureList[prevAnimInteger.ToString()].BallPosition, 
-                    animDataList.moveFigureList[currAnimInteger.ToString()].BallPosition, 
+                //print(" POS ERROR : prev : " + prevAnimId + " curr : " + currAnimId);
+                moveTheBall(animDataList.moveFigureList[prevAnimId.ToString()].BallPosition, 
+                    animDataList.moveFigureList[currAnimId.ToString()].BallPosition, 
                     animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * (1 / animator.GetFloat("TimeFactor")));
             }
+        }
+    }
+
+    void headRotCOntroller() 
+    {
+        if (headRotActions.Contains(animator.GetInteger("AnimId")) && !failed)
+        {
+            headRotOn = true;
+
+            //head.DOLookAt(ball, duration);
+        }
+        else
+        {
+            headRotOn = false;
+
         }
     }
 
@@ -337,7 +334,6 @@ public class TransitionListener : MonoBehaviour
         ball.DOMoveY(midPoint.y, travelDurations.x).SetEase(easeDict[selectedEase][1]).OnComplete(()=>GoDown(travelDurations, targetPos));
         ball.DOMoveX(midPoint.x, travelDurations.x).SetEase(Ease.Linear);
         ball.DOMoveZ(midPoint.z, travelDurations.x).SetEase(Ease.Linear);
-        // ball rotation will bee added.
     }
     private void GoDown(Vector2 travelDurations, Vector3 targetPos)
     {
@@ -388,6 +384,7 @@ public class TransitionListener : MonoBehaviour
         animCounter = 0;
         ball.DOKill(false);
         ball.position = animDataList.moveFigureList["0"].BallPosition;//new Vector3(1.21f, -2.04f, -0.26f);
+        touchManager.refreshPowerBar();
     }
 
     IEnumerator Counter() 
@@ -434,6 +431,25 @@ public class TransitionListener : MonoBehaviour
         easeCounter++;
         selectedEase = easeList[easeCounter % easeList.Count];
         easeText.text = selectedEase;
+    }
+
+    void SetNextAnim(int currentAnimId) 
+    {
+        prevAnimId = currAnimId;
+        currAnimId = currentAnimId;
+
+        headRotCOntroller();
+
+        animator.SetInteger("AnimId", currAnimId);
+
+        helper.transform.position = new Vector3(animDataList.moveFigureList[currAnimId.ToString()].BallPosition.x,
+            animDataList.moveFigureList[currAnimId.ToString()].BallPosition.y + helperHeightOffset,
+            animDataList.moveFigureList[currAnimId.ToString()].BallPosition.z);
+    }
+
+    void PlaySpecialMoveAnim() 
+    {
+        
     }
 
 }

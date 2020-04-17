@@ -64,6 +64,13 @@ public class TestInterface : MonoBehaviour
         transitionListener.animTestOn = false;
         currentTestMode = "TimeTest is ON ";
     }
-
+    [Button]
+    public void PlayGame()
+    {
+        animationManager.devAnimTestOn = false;
+        transitionListener.testing = false;
+        transitionListener.animTestOn = false;
+        currentTestMode = "PlayGame is ON ";
+    }
 
 }
