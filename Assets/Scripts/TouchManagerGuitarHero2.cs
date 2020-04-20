@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,11 +41,20 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     int currentLevel = 1;
 
     int perfectCounter = 0;
+    int specialAnimCounter = 0;
+    [SerializeField]
+    int specialAnimTarget = 5;
 
     [SerializeField]
     Text successRateText, successLevelText, comboText;
 
+    [SerializeField]
+    GameObject optionButtons;
+
     public LevelData levelData;
+
+    AnimationManager animationManager;
+
     // ---------------------------
     public GameObject green, red, tick, xx;
 
@@ -55,7 +65,8 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
     {
         PrepareTheNodeList();
         tempSuccessRate = levelData.levelDatas[("Level" + currentLevel.ToString())].successRates;
-        
+        CalculatePowerBarStep();
+        animationManager = GameObject.Find("AnimationManager").GetComponent<AnimationManager>();
     }
 
     void Update()
@@ -193,7 +204,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         transitionListener.failed = true;
         successRateText.text = "0";
         successLevelText.text = "Failed";
-        comboCounter(false);
+        ComboCounter(false);
     }
 
     
@@ -263,18 +274,18 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         if (tempSuccessRate["Perfect"] < successRate)
         {
             successTextDesigner("Perfect", successRate);
-            comboCounter(true);
-            powerBarController(1);
+            ComboCounter(true);
+            PowerBarController(1);
         }
         else if (tempSuccessRate["Good"] < successRate)
         {
             successTextDesigner("Good", successRate);
-            comboCounter(false);
+            ComboCounter(false);
         }
         else 
         {
             successTextDesigner("Okay", successRate);
-            comboCounter(false);
+            ComboCounter(false);
         }
     }
 
@@ -289,7 +300,7 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         return ((touchTime - touchableStartTime) / (bestTouchTime - touchableStartTime));
     }
 
-    void comboCounter(bool successLevel) 
+    void ComboCounter(bool successLevel) 
     {
         if (successLevel)
         {
@@ -306,15 +317,47 @@ public class TouchManagerGuitarHero2 : MonoBehaviour
         }
     }
 
-    void powerBarController(int unit) 
+    void PowerBarController(int unit) 
     {
         if (powerBar.rectTransform.anchoredPosition.x < 1)
-        {
+        {           
             powerBar.rectTransform.anchoredPosition = new Vector3(powerBar.rectTransform.anchoredPosition.x + (powerBarStep * unit), 0f, 0f);
+
+            specialAnimCounter++;
+            if (specialAnimCounter >= specialAnimTarget) 
+            {
+                transitionListener.specialAnim = true;
+            }
         }
     }
-    public void refreshPowerBar() 
+    public void RefreshPowerBar() 
     {
         powerBar.rectTransform.anchoredPosition = new Vector3(-337, 0f, 0f);
+    }
+
+    void CalculatePowerBarStep() 
+    {
+        powerBarStep = (1 - powerBar.rectTransform.anchoredPosition.x) / specialAnimTarget;
+    }
+
+    public void ShowOptionButtons() 
+    {
+        optionButtons.SetActive(true);
+    }
+    public void OptionContinue() 
+    {
+        animationManager.GenerateAnimationSerieDirected();
+        transitionListener.CheckEvent();
+
+    }
+
+    public void OptionFinish()     
+    {
+        // Altinlari alir menüye doner
+    }
+    public void OptionX2() 
+    {
+        //reklam izletilir
+        // Altinlari 2X alir menüye doner
     }
 }

@@ -148,8 +148,13 @@ public class TransitionListener : MonoBehaviour
         }
     }
 
+    public void SpecialEvent() 
+    {
+        specialAnim = false;
+        CheckEvent();
+    }
     // Animasyon Eventlerinden Topun vucuda degdigi anda tetikleniyor.
-    public void CheckEvent(int status)
+    public void CheckEvent()
     {
         //currAnimId = this.GetComponent<Animator>().GetInteger("AnimId");
         
@@ -157,8 +162,6 @@ public class TransitionListener : MonoBehaviour
         {
             print(Time.time - durationOfTransition);
             
-            
-
             if (!animDataList.tranList.ContainsKey(prevAnimId + "_" + currAnimId))
                 animDataList.tranList.Add(prevAnimId + "_" + currAnimId, new Assets.Scripts.TransitionVo());
 
@@ -260,7 +263,7 @@ public class TransitionListener : MonoBehaviour
             {
                 if (specialAnim)
                 {
-                    PlaySpecialMoveAnim(); // SpecialAnim'e event atilacak ve o eventte specialAnim bool'u false'a cevirilecek.
+                    PlaySpecialMoveAnim(); // SpecialAnim'e event atilacak ve o eventte specialAnim bool'u false'a cevirilecek. Logic: Combo bar dolunca specialAnimi on yapacak boylece bir sonraki checkEvent buraya girecek. Special Anim check eventinde ise specialAnim off yapilacak.
 
                 }
                 else 
@@ -279,22 +282,27 @@ public class TransitionListener : MonoBehaviour
             //setListenTimeForCurrentKick(animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
 
             //print(" transition : " + prevAnimId + "_" + currAnimId + " : Duration : " + animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime);
-            if (animCounter > 1) 
+            if (animCounter > 1)
             {
                 //print("REMOVING : " + animationManager.animationList[0]);
                 if (animationManager.devAnimTestOn) // this if statement can be removed when this test is over
                 {
-                    
+
                     //string tempAnim = animationManager.animationList[0];
                     animationManager.animationList.Add(animationManager.animationList[0]);
                     //print(" ANIM ADD : " + animationManager.animationList.Count);
                 }
                 animationManager.animationList.RemoveAt(0);
-                //print(" POS ERROR : prev : " + prevAnimId + " curr : " + currAnimId);
-                moveTheBall(animDataList.moveFigureList[prevAnimId.ToString()].BallPosition, 
-                    animDataList.moveFigureList[currAnimId.ToString()].BallPosition, 
+                print(" POS ERROR : prev : " + prevAnimId + " curr : " + currAnimId);
+                moveTheBall(animDataList.moveFigureList[prevAnimId.ToString()].BallPosition,
+                    animDataList.moveFigureList[currAnimId.ToString()].BallPosition,
                     animDataList.tranList[prevAnimId + "_" + currAnimId].TransitionTime * (1 / animator.GetFloat("TimeFactor")));
             }
+            
+        }
+        else  // Anim setteki son anim oynatildiysa 3 butonlu soruyu sor.         
+        {
+            touchManager.ShowOptionButtons();
         }
     }
 
@@ -384,7 +392,8 @@ public class TransitionListener : MonoBehaviour
         animCounter = 0;
         ball.DOKill(false);
         ball.position = animDataList.moveFigureList["0"].BallPosition;//new Vector3(1.21f, -2.04f, -0.26f);
-        touchManager.refreshPowerBar();
+        touchManager.RefreshPowerBar();
+        specialAnim = false;
     }
 
     IEnumerator Counter() 
@@ -449,7 +458,9 @@ public class TransitionListener : MonoBehaviour
 
     void PlaySpecialMoveAnim() 
     {
-        
+        SetNextAnim(animationManager.animationIntegers[animationManager.animationList[0]]); // test icin burada testten sonra kaldir.
     }
+
+
 
 }
